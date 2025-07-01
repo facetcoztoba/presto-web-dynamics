@@ -1,16 +1,10 @@
-
 import React from 'react';
 import { Phone, Mail, DollarSign, BadgePercent } from 'lucide-react';
 import SectionHeader from './SectionHeader';
-
 const FundingSection: React.FC = () => {
-  return (
-    <section id="dofinansowanie" className="py-20 px-6 md:px-12 bg-white">
+  return <section id="dofinansowanie" className="py-20 px-6 md:px-12 bg-white">
       <div className="max-w-6xl mx-auto">
-        <SectionHeader 
-          title="Dofinansowanie szkoleń"
-          description="Wszystkie szkolenia oferowane przez Presto Consulting mogą być objęte dofinansowaniem w ramach dostępnych programów wsparcia dla firm i osób indywidualnych."
-        />
+        <SectionHeader title="Dofinansowanie szkoleń" description="Wszystkie szkolenia oferowane przez Presto Consulting mogą być objęte dofinansowaniem w ramach dostępnych programów wsparcia dla firm i osób indywidualnych." />
 
         {/* Main Funding Information Card */}
         <div className="bg-gradient-to-br from-blue-50 via-white to-indigo-50 border border-blue-200 rounded-2xl p-8 md:p-12 shadow-large animate-fade-in-up">
@@ -46,7 +40,7 @@ const FundingSection: React.FC = () => {
                   Program dla małych i średnich przedsiębiorstw oraz osób indywidualnych
                 </p>
                 <div className="text-sm text-slate-700 font-inter">
-                  <span className="font-medium">Maksymalnie 4 320 zł na osobę</span> • Szkolenia dla maksymalnie 3 osób z firmy
+                  <span className="font-medium">Maksymalnie 5 000 zł na osobę</span> • Szkolenia dla maksymalnie 3 osób z firmy
                 </div>
               </div>
 
@@ -84,23 +78,14 @@ const FundingSection: React.FC = () => {
 
               {/* Benefits List */}
               <div className="space-y-4">
-                {[
-                  "Znaczące obniżenie kosztów szkoleń",
-                  "Brak konieczności zwrotu środków",
-                  "Wsparcie dla firm i osób indywidualnych",
-                  "Elastyczne warunki realizacji",
-                  "Profesjonalne doradztwo w procesie aplikacji",
-                  "Szybka procedura składania wniosków"
-                ].map((benefit, index) => (
-                  <div key={index} className="flex items-start space-x-3">
+                {["Znaczące obniżenie kosztów szkoleń", "Brak konieczności zwrotu środków", "Wsparcie dla firm i osób indywidualnych", "Elastyczne warunki realizacji", "Profesjonalne doradztwo w procesie aplikacji", "Szybka procedura składania wniosków"].map((benefit, index) => <div key={index} className="flex items-start space-x-3">
                     <div className="flex-shrink-0 w-5 h-5 bg-green-100 text-green-600 rounded-full flex items-center justify-center mt-0.5">
                       <BadgePercent className="w-3 h-3" />
                     </div>
                     <span className="text-slate-700 font-inter leading-relaxed">
                       {benefit}
                     </span>
-                  </div>
-                ))}
+                  </div>)}
               </div>
 
               {/* Call to Action */}
@@ -127,8 +112,6 @@ const FundingSection: React.FC = () => {
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default FundingSection;
