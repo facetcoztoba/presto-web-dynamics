@@ -32,7 +32,7 @@ const MissionSection: React.FC<MissionSectionProps> = ({ scrollToSection }) => {
 
   return (
     <section ref={ref} className="flex flex-col md:flex-row min-h-[60vh]">
-      <div className="w-full md:w-2/3 bg-gradient-to-br from-brand-navy to-gray-900 text-white flex flex-col justify-end p-8 md:p-16 relative overflow-hidden">
+      <div className="w-full md:w-2/3 bg-gradient-primary text-primary-foreground flex flex-col justify-end p-8 md:p-16 relative overflow-hidden">
         <div
           className="absolute inset-0 opacity-5"
           style={{
@@ -41,18 +41,18 @@ const MissionSection: React.FC<MissionSectionProps> = ({ scrollToSection }) => {
             backgroundPosition: 'center center',
           }}
         ></div>
-        <div className="absolute inset-0 bg-gradient-to-t from-brand-navy/90 to-transparent"></div>
+        <div className="absolute inset-0 bg-gradient-to-t from-primary/90 to-transparent"></div>
         <div className={`relative z-10 transition-all duration-1000 ${isVisible ? 'animate-fade-in-up opacity-100' : 'opacity-0 translate-y-10'}`}>
-          <p className="text-lg text-brand-blue-300 mb-2 font-medium font-inter tracking-wide">
+          <p className="text-lg text-brand-blue-light mb-2 font-medium font-inter tracking-wide">
             Umiejętności, które napędzają rozwój Twojej firmy
           </p>
           <h2 className="text-4xl md:text-5xl font-extrabold leading-tight mb-6 font-inter">
             Wspieramy rozwój ludzi i organizacji poprzez 
-            <span className="bg-gradient-to-r from-brand-blue-300 to-blue-400 bg-clip-text text-transparent"> praktyczną edukację biznesową</span>.
+            <span className="bg-gradient-to-r from-brand-blue-light to-brand-blue bg-clip-text text-transparent"> praktyczną edukację biznesową</span>.
           </h2>
           <button
             onClick={() => scrollToSection('korzysci')}
-            className="group bg-transparent border-2 border-white text-white px-8 py-4 rounded-full hover:bg-white hover:text-brand-navy transition-all duration-300 shadow-medium font-semibold font-inter tracking-wide hover:shadow-large hover:scale-105 active:scale-95"
+            className="group bg-transparent border-2 border-primary-foreground text-primary-foreground px-8 py-4 rounded-full hover:bg-primary-foreground hover:text-primary transition-all duration-300 shadow-medium font-semibold font-inter tracking-wide hover:shadow-large hover:scale-105 active:scale-95"
           >
             <span className="flex items-center">
               Czytaj dalej
@@ -63,8 +63,8 @@ const MissionSection: React.FC<MissionSectionProps> = ({ scrollToSection }) => {
           </button>
         </div>
       </div>
-      <div className="w-full md:w-1/3 bg-gradient-to-br from-brand-cream to-amber-50 flex items-center justify-center p-8 md:p-0 relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-l from-transparent to-white/20"></div>
+      <div className="w-full md:w-1/3 bg-gradient-accent flex items-center justify-center p-8 md:p-0 relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-l from-transparent to-surface-primary/20"></div>
         <img
           src="https://halstein.qodeinteractive.com/wp-content/uploads/2021/10/h3-img-6.jpg"
           alt="Biuro"

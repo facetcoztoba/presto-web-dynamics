@@ -30,7 +30,7 @@ const OffersSection: React.FC = () => {
   ];
 
   return (
-    <section className="py-20 px-6 md:px-12 bg-gradient-to-br from-gray-50 to-white">
+    <section className="py-20 px-6 md:px-12 bg-gradient-section">
       <div className="max-w-6xl mx-auto">
         <SectionHeader 
           subtitle="Nasze specjalizacje"
@@ -41,29 +41,29 @@ const OffersSection: React.FC = () => {
           {offers.map((program, index) => (
             <div 
               key={index} 
-              className="group bg-white/80 backdrop-blur-sm p-8 rounded-2xl shadow-soft flex flex-col justify-between transition-all duration-500 hover:shadow-large hover:scale-105 hover:bg-white/90 border border-gray-100/50 animate-fade-in-up"
+              className="group bg-surface-primary/80 backdrop-blur-sm p-8 rounded-2xl shadow-soft flex flex-col justify-between transition-all duration-500 hover:shadow-large hover:scale-105 hover:bg-surface-primary/90 border border-border/50 animate-fade-in-up"
               style={{ animationDelay: `${index * 200}ms` }}
             >
               <div>
                 <div className="relative overflow-hidden mb-4">
-                  <h3 className="text-xl font-bold text-primary-800 mb-2 font-inter transition-all duration-300 group-hover:text-primary-600">
+                  <h3 className="text-xl font-bold text-primary-light mb-2 font-inter transition-all duration-300 group-hover:text-primary-light-hover">
                     {program.subtitle}
                   </h3>
-                  <h4 className="text-3xl font-extrabold text-brand-navy mb-4 font-inter group-hover:text-primary-700 transition-colors duration-300">
+                  <h4 className="text-3xl font-extrabold text-primary mb-4 font-inter group-hover:text-primary-hover transition-colors duration-300">
                     {program.title}
                   </h4>
                 </div>
-                <p className="text-gray-600 mb-4 font-inter leading-relaxed">
+                <p className="text-muted-foreground mb-4 font-inter leading-relaxed">
                   <strong>{program.description}</strong>
                 </p>
-                <p className="text-gray-600 mb-4 font-inter leading-relaxed">{program.details}</p>
-                <p className="text-gray-600 mb-6 font-inter leading-relaxed">{program.outcome}</p>
+                <p className="text-muted-foreground mb-4 font-inter leading-relaxed">{program.details}</p>
+                <p className="text-muted-foreground mb-6 font-inter leading-relaxed">{program.outcome}</p>
               </div>
               <a
                 href={program.link}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center text-primary-600 font-semibold hover:text-primary-700 transition-all duration-300 font-inter group-hover:translate-x-1"
+                className="inline-flex items-center text-primary-light font-semibold hover:text-primary-light-hover transition-all duration-300 font-inter group-hover:translate-x-1"
               >
                 Program szkolenia
                 <svg className="ml-2 w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">

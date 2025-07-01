@@ -39,7 +39,7 @@ const ProgramsSection: React.FC = () => {
   ];
 
   return (
-    <section id="programy" className="py-20 px-6 md:px-12 bg-gradient-to-br from-slate-50 to-white relative overflow-hidden">
+    <section id="programy" className="py-20 px-6 md:px-12 bg-gradient-section relative overflow-hidden">
       <div
         className="absolute inset-0 opacity-5"
         style={{
