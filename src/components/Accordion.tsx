@@ -1,5 +1,6 @@
 
 import React, { useState } from 'react';
+import { ChevronDown } from 'lucide-react';
 
 interface AccordionItem {
   title: string;
@@ -20,25 +21,28 @@ const Accordion: React.FC<AccordionProps> = ({ items }) => {
   return (
     <div className="space-y-4">
       {items.map((item, index) => (
-        <div key={index} className="border border-gray-200 rounded-lg overflow-hidden shadow-sm">
+        <div 
+          key={index} 
+          className="group border border-gray-200/50 rounded-xl overflow-hidden shadow-soft bg-white/70 backdrop-blur-sm transition-all duration-300 hover:shadow-medium hover:border-primary-200"
+        >
           <button
-            className="flex justify-between items-center w-full p-4 text-left bg-white hover:bg-gray-50 focus:outline-none transition duration-300"
+            className="flex justify-between items-center w-full p-6 text-left bg-transparent hover:bg-gradient-to-r hover:from-primary-50/50 hover:to-transparent focus:outline-none transition-all duration-300"
             onClick={() => toggleAccordion(index)}
           >
-            <span className="text-lg font-semibold text-gray-800">{item.title}</span>
-            <svg
-              className={`w-5 h-5 text-blue-600 transform transition-transform duration-300 ${openIndex === index ? 'rotate-180' : ''}`}
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7"></path>
-            </svg>
+            <span className="text-lg font-semibold text-gray-800 font-inter group-hover:text-primary-700 transition-colors duration-300">
+              {item.title}
+            </span>
+            <ChevronDown
+              className={`w-5 h-5 text-primary-600 transform transition-all duration-300 group-hover:text-primary-700 ${
+                openIndex === index ? 'rotate-180' : ''
+              }`}
+            />
           </button>
           {openIndex === index && (
-            <div className="p-4 bg-gray-50 border-t border-gray-200">
-              <p className="text-gray-700">{item.content}</p>
+            <div className="px-6 pb-6 bg-gradient-to-r from-gray-50/50 to-transparent border-t border-gray-100 animate-fade-in-up">
+              <p className="text-gray-700 leading-relaxed font-inter pt-4">
+                {item.content}
+              </p>
             </div>
           )}
         </div>
