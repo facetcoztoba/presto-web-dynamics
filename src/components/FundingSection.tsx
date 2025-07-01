@@ -1,10 +1,16 @@
+
 import React from 'react';
 import { Phone, Mail, DollarSign, BadgePercent } from 'lucide-react';
 import SectionHeader from './SectionHeader';
+
 const FundingSection: React.FC = () => {
-  return <section id="dofinansowanie" className="py-20 px-6 md:px-12 bg-white">
+  return (
+    <section id="dofinansowanie" className="py-20 px-6 md:px-12 bg-white">
       <div className="max-w-6xl mx-auto">
-        <SectionHeader title="Dofinansowanie szkoleń" description="Wszystkie szkolenia oferowane przez Presto Consulting mogą być objęte dofinansowaniem w ramach dostępnych programów wsparcia dla firm i osób indywidualnych." />
+        <SectionHeader 
+          title="Dofinansowanie szkoleń" 
+          description="Wszystkie szkolenia oferowane przez Presto Consulting mogą być objęte dofinansowaniem w ramach dostępnych programów wsparcia dla firm i osób indywidualnych." 
+        />
 
         {/* Main Funding Information Card */}
         <div className="bg-gradient-to-br from-blue-50 via-white to-indigo-50 border border-blue-200 rounded-2xl p-8 md:p-12 shadow-large animate-fade-in-up">
@@ -27,8 +33,16 @@ const FundingSection: React.FC = () => {
               </div>
 
               {/* BUR Program */}
-              <div className="bg-white rounded-xl p-6 border border-gray-100 shadow-soft">
-                <div className="flex items-start justify-between mb-3">
+              <div className="bg-white rounded-xl p-6 border border-gray-100 shadow-soft relative overflow-hidden">
+                {/* BUR Logo */}
+                <div className="absolute top-4 right-4 opacity-10">
+                  <img 
+                    src="https://www.isepszkolenia.pl/wp-content/uploads/2021/01/Baza-Uslug-Rozwojowych-CMYK.jpg" 
+                    alt="BUR Logo" 
+                    className="w-16 h-16 object-contain"
+                  />
+                </div>
+                <div className="flex items-start justify-between mb-3 relative z-10">
                   <h4 className="text-lg font-semibold text-slate-800 font-inter">
                     Baza Usług Rozwojowych (BUR)
                   </h4>
@@ -36,10 +50,10 @@ const FundingSection: React.FC = () => {
                     do 95%
                   </div>
                 </div>
-                <p className="text-sm text-slate-600 font-inter mb-3">
+                <p className="text-sm text-slate-600 font-inter mb-3 relative z-10">
                   Program dla małych i średnich przedsiębiorstw oraz osób indywidualnych
                 </p>
-                <div className="text-sm text-slate-700 font-inter">
+                <div className="text-sm text-slate-700 font-inter relative z-10">
                   <span className="font-medium">Maksymalnie 5 000 zł na osobę</span> • Szkolenia dla maksymalnie 3 osób z firmy
                 </div>
               </div>
@@ -112,6 +126,8 @@ const FundingSection: React.FC = () => {
           </div>
         </div>
       </div>
-    </section>;
+    </section>
+  );
 };
+
 export default FundingSection;
