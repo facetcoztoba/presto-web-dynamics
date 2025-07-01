@@ -59,8 +59,16 @@ const FundingSection: React.FC = () => {
               </div>
 
               {/* KFS Program */}
-              <div className="bg-white rounded-xl p-6 border border-gray-100 shadow-soft">
-                <div className="flex items-start justify-between mb-3">
+              <div className="bg-white rounded-xl p-6 border border-gray-100 shadow-soft relative overflow-hidden">
+                {/* KFS Logo */}
+                <div className="absolute top-4 right-4 opacity-10">
+                  <img 
+                    src="https://midero.pl/wp-content/uploads/2025/01/kfs-logo.png" 
+                    alt="KFS Logo" 
+                    className="w-16 h-16 object-contain"
+                  />
+                </div>
+                <div className="flex items-start justify-between mb-3 relative z-10">
                   <h4 className="text-lg font-semibold text-slate-800 font-inter">
                     Krajowy Fundusz Szkoleniowy (KFS)
                   </h4>
@@ -68,10 +76,10 @@ const FundingSection: React.FC = () => {
                     do 80%
                   </div>
                 </div>
-                <p className="text-sm text-slate-600 font-inter mb-3">
+                <p className="text-sm text-slate-600 font-inter mb-3 relative z-10">
                   Program dla wszystkich przedsiębiorców
                 </p>
-                <div className="text-sm text-slate-700 font-inter">
+                <div className="text-sm text-slate-700 font-inter relative z-10">
                   <span className="font-medium">Średnio 2 500 zł na osobę</span> • Szkolenia dla większej liczby pracowników
                 </div>
               </div>
