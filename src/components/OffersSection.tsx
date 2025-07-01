@@ -1,4 +1,3 @@
-
 import React from 'react';
 import SectionHeader from './SectionHeader';
 
@@ -34,7 +33,7 @@ const OffersSection: React.FC = () => {
     <section className="py-20 px-6 md:px-12 bg-gradient-to-br from-gray-50 to-white">
       <div className="max-w-6xl mx-auto">
         <SectionHeader 
-          subtitle="New offers"
+          subtitle="Nasze specjalizacje"
           title="Rozwój zawodowy dla Twojej firmy - nasze programy szkoleniowe."
         />
 
