@@ -28,7 +28,7 @@ const BenefitsSection: React.FC = () => {
   ];
 
   return (
-    <section id="korzysci" className="py-20 px-6 md:px-12 bg-gradient-to-br from-slate-50 to-white relative overflow-hidden">
+    <section id="korzysci" className="py-20 px-6 md:px-12 bg-gradient-section relative overflow-hidden">
       <div
         className="absolute inset-0 opacity-5"
         style={{
@@ -46,18 +46,18 @@ const BenefitsSection: React.FC = () => {
           {benefits.map((benefit, index) => (
             <div 
               key={index} 
-              className={`group bg-white rounded-xl border border-gray-100 p-8 shadow-soft hover:shadow-medium transition-all duration-300 hover:-translate-y-1 animate-fade-in-up text-center`}
+              className={`group bg-surface-primary rounded-xl border border-border p-8 shadow-soft hover:shadow-medium transition-all duration-300 hover:-translate-y-1 animate-fade-in-up text-center`}
               style={{ animationDelay: `${index * 150}ms` }}
             >
-              <div className="w-16 h-16 bg-gradient-to-br from-brand-navy to-slate-600 text-white rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
+              <div className="w-16 h-16 bg-gradient-primary text-primary-foreground rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
                 <benefit.icon className="w-8 h-8" />
               </div>
               
-              <h3 className="text-xl font-bold text-slate-800 mb-4 font-inter group-hover:text-brand-navy transition-colors duration-300">
+              <h3 className="text-xl font-bold text-foreground mb-4 font-inter group-hover:text-primary transition-colors duration-300">
                 {benefit.title}
               </h3>
               
-              <p className="text-slate-600 leading-relaxed font-inter group-hover:text-slate-700 transition-colors duration-300">
+              <p className="text-muted-foreground leading-relaxed font-inter group-hover:text-foreground transition-colors duration-300">
                 {benefit.description}
               </p>
             </div>
