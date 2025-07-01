@@ -4,6 +4,7 @@ import Header from '../components/Header';
 import HeroSection from '../components/HeroSection';
 import ProgramsSection from '../components/ProgramsSection';
 import MissionSection from '../components/MissionSection';
+import FundingSection from '../components/FundingSection';
 import OffersSection from '../components/OffersSection';
 import BenefitsSection from '../components/BenefitsSection';
 import WhyChooseUsSection from '../components/WhyChooseUsSection';
@@ -40,6 +41,8 @@ const Index = () => {
       <ProgramsSection />
 
       <MissionSection scrollToSection={scrollToSection} />
+
+      <FundingSection />
 
       <OffersSection />
 
