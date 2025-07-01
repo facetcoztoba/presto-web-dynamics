@@ -19,169 +19,137 @@ const ContactSection: React.FC = () => {
         <SectionHeader 
           subtitle="Skontaktuj się z nami"
           title="Porozmawiajmy o rozwoju Twojej firmy."
-          className="text-center mb-12"
+          className="text-center mb-16"
         />
         
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
           {/* Contact Form - Left Column */}
-          <div className="lg:col-span-2">
+          <div>
             <ContactForm />
           </div>
 
           {/* Contact Information - Right Column */}
-          <div className="space-y-6">
-            {/* Company Information */}
-            <div className="bg-gradient-to-br from-gray-50/80 to-white/80 backdrop-blur-sm p-6 rounded-2xl shadow-soft border border-gray-100/50">
-              <h3 className="text-xl font-bold text-gray-800 mb-4 font-inter flex items-center">
-                <Mail className="w-5 h-5 mr-2 text-primary-600" />
-                Dane Firmy
+          <div className="space-y-8">
+            {/* Company Information & General Contact */}
+            <div className="bg-gradient-to-br from-gray-50/80 to-white/80 backdrop-blur-sm p-8 rounded-2xl shadow-soft border border-gray-100/50">
+              <h3 className="text-2xl font-bold text-gray-800 mb-6 font-inter flex items-center">
+                <Mail className="w-6 h-6 mr-3 text-primary-600" />
+                Dane Firmy i Kontakt
               </h3>
-              <div className="space-y-3 text-gray-600 font-inter text-sm">
+              
+              <div className="space-y-6">
+                {/* Company Details */}
                 <div>
-                  <p className="font-semibold text-gray-800">Presto Consulting Jarosław Motyka</p>
+                  <h4 className="font-semibold text-gray-800 mb-3 text-lg">Presto Consulting Jarosław Motyka</h4>
+                  <div className="space-y-2 text-gray-600 font-inter">
+                    <div>
+                      <span className="font-medium">Adres:</span>
+                      <a href="https://www.google.com/maps/place/Jasna+33C,+Wilcza+G%C3%B3ra,+Poland/" target="_blank" rel="noopener noreferrer" className="block hover:text-primary-600 transition-colors duration-300 ml-2">
+                        ul. Jasna 33c, 05-506 Wilcza Góra
+                      </a>
+                    </div>
+                    <div className="flex gap-6">
+                      <p><span className="font-medium">NIP:</span> 521-317-54-53</p>
+                      <p><span className="font-medium">REGON:</span> 140580167</p>
+                    </div>
+                  </div>
                 </div>
-                <div>
-                  <p className="font-medium">Adres:</p>
-                  <a href="https://www.google.com/maps/place/Jasna+33C,+Wilcza+G%C3%B3ra,+Poland/" target="_blank" rel="noopener noreferrer" className="hover:text-primary-600 transition-colors duration-300">
-                    ul. Jasna 33c, 05-506 Wilcza Góra
-                  </a>
-                </div>
-                <div>
-                  <p><span className="font-medium">NIP:</span> 521-317-54-53</p>
-                  <p><span className="font-medium">REGON:</span> 140580167</p>
-                </div>
-              </div>
-            </div>
 
-            {/* General Contact */}
-            <div className="bg-gradient-to-br from-gray-50/80 to-white/80 backdrop-blur-sm p-6 rounded-2xl shadow-soft border border-gray-100/50">
-              <h3 className="text-xl font-bold text-gray-800 mb-4 font-inter flex items-center">
-                <Phone className="w-5 h-5 mr-2 text-primary-600" />
-                Kontakt Ogólny
-              </h3>
-              <div className="space-y-3 text-gray-600 font-inter">
-                <div className="group">
-                  <p className="transition-colors duration-300 group-hover:text-primary-600">
-                    <a href="mailto:kontakt@prestoconsulting.pl" className="hover:text-primary-600 transition-colors duration-300 flex items-center">
-                      <Mail className="w-4 h-4 mr-2" />
-                      kontakt@prestoconsulting.pl
-                    </a>
-                  </p>
-                </div>
-                <div className="group">
-                  <p className="transition-colors duration-300 group-hover:text-primary-600">
-                    <a href="tel:+48515103595" className="hover:text-primary-600 transition-colors duration-300 flex items-center">
-                      <Phone className="w-4 h-4 mr-2" />
-                      +48 515 103 595
-                    </a>
-                  </p>
-                </div>
-              </div>
+                {/* Contact Information */}
+                <div className="pt-4 border-t border-gray-200">
+                  <h4 className="font-semibold text-gray-800 mb-4 text-lg">Informacje Kontaktowe</h4>
+                  <div className="space-y-4">
+                    <div className="group">
+                      <p className="text-gray-600 font-medium mb-1">Kontakt Ogólny:</p>
+                      <div className="flex items-center space-x-2">
+                        <Mail className="w-4 h-4 text-primary-600" />
+                        <a href="mailto:kontakt@prestoconsulting.pl" className="hover:text-primary-600 transition-colors duration-300">
+                          kontakt@prestoconsulting.pl
+                        </a>
+                      </div>
+                    </div>
+                    
+                    <div className="group">
+                      <div className="flex items-center space-x-2">
+                        <Phone className="w-4 h-4 text-primary-600" />
+                        <a href="tel:+48515103595" className="hover:text-primary-600 transition-colors duration-300">
+                          +48 515 103 595
+                        </a>
+                      </div>
+                    </div>
 
-              <div className="mt-4 pt-4 border-t border-gray-200">
-                <h4 className="font-semibold text-gray-800 mb-2">Jarosław Motyka</h4>
-                <div className="space-y-2 text-sm text-gray-600">
-                  <p>
-                    <a href="mailto:jaroslaw@prestoconsulting.pl" className="hover:text-primary-600 transition-colors duration-300">
-                      jaroslaw@prestoconsulting.pl
-                    </a>
-                  </p>
+                    <div className="group">
+                      <p className="text-gray-600 font-medium mb-1">Kontakt Bezpośredni:</p>
+                      <div className="flex items-center space-x-2">
+                        <Mail className="w-4 h-4 text-primary-600" />
+                        <a href="mailto:jaroslaw@prestoconsulting.pl" className="hover:text-primary-600 transition-colors duration-300">
+                          jaroslaw@prestoconsulting.pl
+                        </a>
+                      </div>
+                      <p className="text-sm text-gray-500 ml-6">Jarosław Motyka</p>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
 
             {/* Complaints Contact */}
-            <div className="bg-gradient-to-br from-amber-50/80 to-orange-50/80 backdrop-blur-sm p-6 rounded-2xl shadow-soft border border-amber-100/50">
-              <h3 className="text-xl font-bold text-gray-800 mb-4 font-inter flex items-center">
-                <AlertCircle className="w-5 h-5 mr-2 text-amber-600" />
+            <div className="bg-gradient-to-br from-amber-50/80 to-orange-50/80 backdrop-blur-sm p-8 rounded-2xl shadow-soft border border-amber-100/50">
+              <h3 className="text-2xl font-bold text-gray-800 mb-6 font-inter flex items-center">
+                <AlertCircle className="w-6 h-6 mr-3 text-amber-600" />
                 Kontakt ws. Reklamacji
               </h3>
-              <div className="space-y-3 text-gray-600 font-inter">
+              
+              <div className="space-y-6">
                 <div className="group">
-                  <p className="transition-colors duration-300 group-hover:text-primary-600">
-                    <a href="mailto:projekty@prestoconsulting.pl" className="hover:text-primary-600 transition-colors duration-300 flex items-center">
-                      <Mail className="w-4 h-4 mr-2" />
+                  <div className="flex items-center space-x-2 mb-3">
+                    <Mail className="w-5 h-5 text-amber-600" />
+                    <a href="mailto:projekty@prestoconsulting.pl" className="hover:text-primary-600 transition-colors duration-300 text-lg font-medium">
                       projekty@prestoconsulting.pl
                     </a>
-                  </p>
+                  </div>
                 </div>
-                <div className="text-sm bg-amber-100/50 p-3 rounded-lg">
-                  <p className="font-medium text-amber-800 mb-1">Ważne terminy:</p>
-                  <p className="text-amber-700">• Składanie reklamacji: <strong>15 dni roboczych</strong> od zakończenia usługi</p>
-                  <p className="text-amber-700">• Czas odpowiedzi: <strong>do 7 dni</strong> od wpłynięcia reklamacji</p>
+                
+                <div className="bg-amber-100/50 p-4 rounded-lg">
+                  <p className="font-semibold text-amber-800 mb-2">Ważne terminy:</p>
+                  <div className="space-y-1 text-amber-700">
+                    <p>• Składanie reklamacji: <strong>15 dni roboczych</strong> od zakończenia usługi</p>
+                    <p>• Czas odpowiedzi: <strong>do 7 dni</strong> od wpłynięcia reklamacji</p>
+                  </div>
                 </div>
               </div>
             </div>
 
             {/* Documents Section */}
-            <div className="bg-gradient-to-br from-gray-50/80 to-white/80 backdrop-blur-sm p-6 rounded-2xl shadow-soft border border-gray-100/50">
-              <h3 className="text-xl font-bold text-gray-800 mb-4 font-inter flex items-center">
-                <FileText className="w-5 h-5 mr-2 text-primary-600" />
+            <div className="bg-gradient-to-br from-gray-50/80 to-white/80 backdrop-blur-sm p-8 rounded-2xl shadow-soft border border-gray-100/50">
+              <h3 className="text-2xl font-bold text-gray-800 mb-6 font-inter flex items-center">
+                <FileText className="w-6 h-6 mr-3 text-primary-600" />
                 Dokumenty do pobrania
               </h3>
-              <div className="space-y-3">
+              
+              <div className="space-y-4">
                 <a 
                   href="https://hosting1736455092.freekru.pl/wp-content/uploads/2025/06/Polityka_Reklamacyjna_Presto.pdf"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group flex items-start space-x-3 p-3 rounded-lg hover:bg-white/70 transition-all duration-300 hover:shadow-sm"
+                  className="group flex items-start space-x-4 p-4 rounded-lg hover:bg-white/70 transition-all duration-300 hover:shadow-sm"
                 >
-                  <div className="flex-shrink-0 w-10 h-10 bg-primary-100 text-primary-600 rounded-lg flex items-center justify-center group-hover:bg-primary-200 transition-colors duration-300">
-                    <FileText className="w-5 h-5" />
+                  <div className="flex-shrink-0 w-12 h-12 bg-primary-100 text-primary-600 rounded-lg flex items-center justify-center group-hover:bg-primary-200 transition-colors duration-300">
+                    <FileText className="w-6 h-6" />
                   </div>
                   <div className="flex-1 min-w-0">
-                    <p className="text-gray-800 font-medium font-inter group-hover:text-primary-700 transition-colors duration-300">
+                    <p className="text-gray-800 font-semibold font-inter group-hover:text-primary-700 transition-colors duration-300 text-lg">
                       Polityka Reklamacyjna
                     </p>
-                    <p className="text-sm text-gray-600 font-inter">
-                      Pełny dokument PDF
+                    <p className="text-gray-600 font-inter mt-1">
+                      Pełny dokument zawierający warunki i procedury reklamacyjne
                     </p>
                   </div>
-                  <ExternalLink className="w-4 h-4 text-gray-400 group-hover:text-primary-600 transition-colors duration-300 flex-shrink-0 mt-1" />
-                </a>
-
-                <a 
-                  href="https://hosting1736455092.freekru.pl/wp-content/uploads/2025/06/Formularz_reklamacji_Presto.pdf"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="group flex items-start space-x-3 p-3 rounded-lg hover:bg-white/70 transition-all duration-300 hover:shadow-sm"
-                >
-                  <div className="flex-shrink-0 w-10 h-10 bg-amber-100 text-amber-600 rounded-lg flex items-center justify-center group-hover:bg-amber-200 transition-colors duration-300">
-                    <FileText className="w-5 h-5" />
-                  </div>
-                  <div className="flex-1 min-w-0">
-                    <p className="text-gray-800 font-medium font-inter group-hover:text-primary-700 transition-colors duration-300">
-                      Formularz reklamacji
-                    </p>
-                    <p className="text-sm text-gray-600 font-inter">
-                      Do wypełnienia PDF
-                    </p>
-                  </div>
-                  <ExternalLink className="w-4 h-4 text-gray-400 group-hover:text-primary-600 transition-colors duration-300 flex-shrink-0 mt-1" />
-                </a>
-
-                <a 
-                  href="https://hosting1736455092.freekru.pl/wp-content/uploads/2025/06/Ankieta_oceny_Presto.pdf"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="group flex items-start space-x-3 p-3 rounded-lg hover:bg-white/70 transition-all duration-300 hover:shadow-sm"
-                >
-                  <div className="flex-shrink-0 w-10 h-10 bg-green-100 text-green-600 rounded-lg flex items-center justify-center group-hover:bg-green-200 transition-colors duration-300">
-                    <FileText className="w-5 h-5" />
-                  </div>
-                  <div className="flex-1 min-w-0">
-                    <p className="text-gray-800 font-medium font-inter group-hover:text-primary-700 transition-colors duration-300">
-                      Ankieta oceny usługi
-                    </p>
-                    <p className="text-sm text-gray-600 font-inter">
-                      Ocena jakości szkoleń
-                    </p>
-                  </div>
-                  <ExternalLink className="w-4 h-4 text-gray-400 group-hover:text-primary-600 transition-colors duration-300 flex-shrink-0 mt-1" />
+                  <ExternalLink className="w-5 h-5 text-gray-400 group-hover:text-primary-600 transition-colors duration-300 flex-shrink-0 mt-1" />
                 </a>
               </div>
 
-              <div className="mt-4 pt-4 border-t border-gray-200">
+              <div className="mt-6 pt-4 border-t border-gray-200">
                 <p className="text-sm text-gray-600 font-inter">
                   <strong>Formularz online:</strong> Możliwość złożenia reklamacji przez stronę internetową dostępna wkrótce.
                 </p>
