@@ -8,8 +8,8 @@ const FundingSection: React.FC = () => {
     <section id="dofinansowanie" className="py-20 px-6 md:px-12 bg-white">
       <div className="max-w-6xl mx-auto">
         <SectionHeader 
-          title="Dofinansowanie szkoleń dla Twojej firmy"
-          description="Wszystkie szkolenia oferowane przez Presto Consulting mogą być objęte dofinansowaniem w ramach dostępnych programów wsparcia dla przedsiębiorców."
+          title="Dofinansowanie szkoleń"
+          description="Wszystkie szkolenia oferowane przez Presto Consulting mogą być objęte dofinansowaniem w ramach dostępnych programów wsparcia dla firm i osób indywidualnych."
         />
 
         {/* Main Funding Information Card */}
@@ -28,7 +28,7 @@ const FundingSection: React.FC = () => {
                   </h3>
                 </div>
                 <p className="text-slate-600 leading-relaxed font-inter mb-8">
-                  Sprawdź, z których programów możesz skorzystać, aby znacząco obniżyć koszty rozwoju swojego zespołu.
+                  Sprawdź, z których programów możesz skorzystać, aby znacząco obniżyć koszty rozwoju swoich umiejętności lub swojego zespołu.
                 </p>
               </div>
 
@@ -36,14 +36,14 @@ const FundingSection: React.FC = () => {
               <div className="bg-white rounded-xl p-6 border border-gray-100 shadow-soft">
                 <div className="flex items-start justify-between mb-3">
                   <h4 className="text-lg font-semibold text-slate-800 font-inter">
-                    Barometr Rozwoju Umiejętności (BUR)
+                    Baza Usług Rozwojowych (BUR)
                   </h4>
                   <div className="bg-green-100 text-green-700 px-3 py-1 rounded-full text-sm font-semibold">
                     do 95%
                   </div>
                 </div>
                 <p className="text-sm text-slate-600 font-inter mb-3">
-                  Program dla małych i średnich przedsiębiorstw
+                  Program dla małych i średnich przedsiębiorstw oraz osób indywidualnych
                 </p>
                 <div className="text-sm text-slate-700 font-inter">
                   <span className="font-medium">Maksymalnie 4 320 zł na osobę</span> • Szkolenia dla maksymalnie 3 osób z firmy
@@ -87,7 +87,7 @@ const FundingSection: React.FC = () => {
                 {[
                   "Znaczące obniżenie kosztów szkoleń",
                   "Brak konieczności zwrotu środków",
-                  "Wsparcie dla różnych typów firm",
+                  "Wsparcie dla firm i osób indywidualnych",
                   "Elastyczne warunki realizacji",
                   "Profesjonalne doradztwo w procesie aplikacji",
                   "Szybka procedura składania wniosków"
@@ -109,7 +109,7 @@ const FundingSection: React.FC = () => {
                   Sprawdź swoje możliwości dofinansowania
                 </h4>
                 <p className="text-blue-100 mb-6 font-inter leading-relaxed">
-                  Skontaktuj się z nami, aby dowiedzieć się więcej o dostępnych programach i sprawdzić, które dofinansowanie będzie najlepsze dla Twojej firmy.
+                  Skontaktuj się z nami, aby dowiedzieć się więcej o dostępnych programach i sprawdzić, które dofinansowanie będzie najlepsze dla Ciebie lub Twojej firmy.
                 </p>
                 
                 <div className="space-y-3">
