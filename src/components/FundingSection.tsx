@@ -1,130 +1,130 @@
+
 import React from 'react';
-import { Phone, Mail, ExternalLink, Check, Info } from 'lucide-react';
+import { Phone, Mail, DollarSign, BadgePercent } from 'lucide-react';
 import SectionHeader from './SectionHeader';
 
 const FundingSection: React.FC = () => {
-  const programs = [
-    {
-      name: "Barometr Rozwoju Umiejętności (BUR)",
-      subtitle: "Program dla małych i średnich przedsiębiorstw",
-      percentage: "do 95%",
-      description: "Dofinansowanie szkoleń pracowników w ramach programu Barometr Rozwoju Umiejętności",
-      benefits: [
-        "Dofinansowanie do 95% kosztów szkolenia",
-        "Maksymalnie 4 320 zł na osobę",
-        "Szkolenia dla maksymalnie 3 osób z firmy",
-        "Brak konieczności zwrotu środków"
-      ],
-      contact: {
-        phone: "Zadzwoń po szczegóły",
-        email: "Napisz e-mail",
-        external: "Zobacz program"
-      }
-    },
-    {
-      name: "Krajowy Fundusz Szkoleniowy (KFS)",
-      subtitle: "Program dla wszystkich przedsiębiorców",
-      percentage: "do 80%",
-      description: "Krajowy Fundusz Szkoleniowy wspiera rozwój kompetencji pracowników",
-      benefits: [
-        "Dofinansowanie do 80% kosztów szkolenia",
-        "Średnio 2 500 zł na osobę",
-        "Szkolenia dla większej liczby pracowników",
-        "Elastyczne warunki realizacji"
-      ],
-      contact: {
-        phone: "Zadzwoń po szczegóły",
-        email: "Napisz e-mail", 
-        external: "Zobacz program"
-      }
-    }
-  ];
-
   return (
     <section id="dofinansowanie" className="py-20 px-6 md:px-12 bg-white">
       <div className="max-w-6xl mx-auto">
         <SectionHeader 
-          title="Dostępne programy dofinansowania"
-          description="Sprawdź, z jakich programów możesz skorzystać, aby obniżyć koszty szkoleń dla Twojego zespołu."
+          title="Dofinansowanie szkoleń dla Twojej firmy"
+          description="Wszystkie szkolenia oferowane przez Presto Consulting mogą być objęte dofinansowaniem w ramach dostępnych programów wsparcia dla przedsiębiorców."
         />
 
-        {/* Funding Information Banner */}
-        <div className="bg-gradient-to-r from-blue-50 to-indigo-50 border border-blue-200 rounded-xl p-6 mb-12 animate-fade-in-up">
-          <div className="flex items-start space-x-4">
-            <div className="flex-shrink-0 w-8 h-8 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center">
-              <Info className="w-5 h-5" />
-            </div>
-            <div>
-              <h3 className="text-lg font-semibold text-slate-800 mb-2 font-inter">
-                Dofinansowanie do szkoleń
-              </h3>
-              <p className="text-slate-700 leading-relaxed font-inter">
-                Wszystkie szkolenia oferowane przez <strong>Presto Consulting</strong> mogą być objęte <strong>DOFINANSOWANIEM</strong> w ramach dostępnych programów wsparcia dla przedsiębiorców. Sprawdź poniżej, z których programów możesz skorzystać, aby znacząco obniżyć koszty rozwoju swojego zespołu.
-              </p>
-            </div>
-          </div>
-        </div>
-
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-          {programs.map((program, index) => (
-            <div 
-              key={index}
-              className="group bg-white rounded-xl border border-gray-100 p-8 shadow-soft hover:shadow-medium transition-all duration-300 hover:-translate-y-1 animate-fade-in-up"
-              style={{ animationDelay: `${index * 150}ms` }}
-            >
-              {/* Header with percentage badge */}
-              <div className="flex items-start justify-between mb-4">
-                <div className="flex-1">
-                  <h3 className="text-xl font-bold text-slate-800 mb-2 font-inter group-hover:text-slate-900 transition-colors duration-300">
-                    {program.name}
+        {/* Main Funding Information Card */}
+        <div className="bg-gradient-to-br from-blue-50 via-white to-indigo-50 border border-blue-200 rounded-2xl p-8 md:p-12 shadow-large animate-fade-in-up">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+            
+            {/* Left Column - Available Programs */}
+            <div className="space-y-8">
+              <div>
+                <div className="flex items-center space-x-3 mb-6">
+                  <div className="w-10 h-10 bg-brand-navy text-white rounded-full flex items-center justify-center">
+                    <DollarSign className="w-5 h-5" />
+                  </div>
+                  <h3 className="text-2xl font-bold text-slate-800 font-inter">
+                    Dostępne programy dofinansowania
                   </h3>
-                  <p className="text-sm text-slate-600 font-inter">
-                    {program.subtitle}
-                  </p>
                 </div>
-                <div className="bg-brand-navy text-white px-4 py-2 rounded-full text-sm font-semibold">
-                  {program.percentage}
+                <p className="text-slate-600 leading-relaxed font-inter mb-8">
+                  Sprawdź, z których programów możesz skorzystać, aby znacząco obniżyć koszty rozwoju swojego zespołu.
+                </p>
+              </div>
+
+              {/* BUR Program */}
+              <div className="bg-white rounded-xl p-6 border border-gray-100 shadow-soft">
+                <div className="flex items-start justify-between mb-3">
+                  <h4 className="text-lg font-semibold text-slate-800 font-inter">
+                    Barometr Rozwoju Umiejętności (BUR)
+                  </h4>
+                  <div className="bg-green-100 text-green-700 px-3 py-1 rounded-full text-sm font-semibold">
+                    do 95%
+                  </div>
+                </div>
+                <p className="text-sm text-slate-600 font-inter mb-3">
+                  Program dla małych i średnich przedsiębiorstw
+                </p>
+                <div className="text-sm text-slate-700 font-inter">
+                  <span className="font-medium">Maksymalnie 4 320 zł na osobę</span> • Szkolenia dla maksymalnie 3 osób z firmy
                 </div>
               </div>
 
-              {/* Description */}
-              <p className="text-slate-600 leading-relaxed font-inter text-sm mb-6 group-hover:text-slate-700 transition-colors duration-300">
-                {program.description}
-              </p>
+              {/* KFS Program */}
+              <div className="bg-white rounded-xl p-6 border border-gray-100 shadow-soft">
+                <div className="flex items-start justify-between mb-3">
+                  <h4 className="text-lg font-semibold text-slate-800 font-inter">
+                    Krajowy Fundusz Szkoleniowy (KFS)
+                  </h4>
+                  <div className="bg-blue-100 text-blue-700 px-3 py-1 rounded-full text-sm font-semibold">
+                    do 80%
+                  </div>
+                </div>
+                <p className="text-sm text-slate-600 font-inter mb-3">
+                  Program dla wszystkich przedsiębiorców
+                </p>
+                <div className="text-sm text-slate-700 font-inter">
+                  <span className="font-medium">Średnio 2 500 zł na osobę</span> • Szkolenia dla większej liczby pracowników
+                </div>
+              </div>
+            </div>
 
-              {/* Benefits list */}
-              <div className="space-y-3 mb-8">
-                {program.benefits.map((benefit, benefitIndex) => (
-                  <div key={benefitIndex} className="flex items-start space-x-3">
+            {/* Right Column - Key Benefits & CTA */}
+            <div className="space-y-8">
+              <div>
+                <div className="flex items-center space-x-3 mb-6">
+                  <div className="w-10 h-10 bg-green-500 text-white rounded-full flex items-center justify-center">
+                    <BadgePercent className="w-5 h-5" />
+                  </div>
+                  <h3 className="text-2xl font-bold text-slate-800 font-inter">
+                    Główne korzyści
+                  </h3>
+                </div>
+              </div>
+
+              {/* Benefits List */}
+              <div className="space-y-4">
+                {[
+                  "Znaczące obniżenie kosztów szkoleń",
+                  "Brak konieczności zwrotu środków",
+                  "Wsparcie dla różnych typów firm",
+                  "Elastyczne warunki realizacji",
+                  "Profesjonalne doradztwo w procesie aplikacji",
+                  "Szybka procedura składania wniosków"
+                ].map((benefit, index) => (
+                  <div key={index} className="flex items-start space-x-3">
                     <div className="flex-shrink-0 w-5 h-5 bg-green-100 text-green-600 rounded-full flex items-center justify-center mt-0.5">
-                      <Check className="w-3 h-3" />
+                      <BadgePercent className="w-3 h-3" />
                     </div>
-                    <span className="text-slate-600 text-sm font-inter leading-relaxed">
+                    <span className="text-slate-700 font-inter leading-relaxed">
                       {benefit}
                     </span>
                   </div>
                 ))}
               </div>
 
-              {/* Contact buttons */}
-              <div className="space-y-3">
-                <button className="w-full bg-brand-navy text-white px-6 py-3 rounded-lg hover:bg-slate-800 transition-colors duration-300 font-semibold font-inter flex items-center justify-center space-x-2">
-                  <Phone className="w-4 h-4" />
-                  <span>{program.contact.phone}</span>
-                </button>
-                <div className="grid grid-cols-2 gap-3">
-                  <button className="bg-slate-100 text-slate-700 px-4 py-2 rounded-lg hover:bg-slate-200 transition-colors duration-300 font-medium font-inter flex items-center justify-center space-x-2">
-                    <Mail className="w-4 h-4" />
-                    <span>E-mail</span>
+              {/* Call to Action */}
+              <div className="bg-gradient-to-r from-brand-navy to-slate-700 rounded-xl p-6 text-white">
+                <h4 className="text-xl font-bold mb-3 font-inter">
+                  Sprawdź swoje możliwości dofinansowania
+                </h4>
+                <p className="text-blue-100 mb-6 font-inter leading-relaxed">
+                  Skontaktuj się z nami, aby dowiedzieć się więcej o dostępnych programach i sprawdzić, które dofinansowanie będzie najlepsze dla Twojej firmy.
+                </p>
+                
+                <div className="space-y-3">
+                  <button className="w-full bg-white text-brand-navy px-6 py-3 rounded-lg hover:bg-gray-50 transition-colors duration-300 font-semibold font-inter flex items-center justify-center space-x-2">
+                    <Phone className="w-4 h-4" />
+                    <span>Zadzwoń po szczegóły</span>
                   </button>
-                  <button className="bg-slate-100 text-slate-700 px-4 py-2 rounded-lg hover:bg-slate-200 transition-colors duration-300 font-medium font-inter flex items-center justify-center space-x-2">
-                    <ExternalLink className="w-4 h-4" />
-                    <span>Program</span>
+                  <button className="w-full bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition-colors duration-300 font-medium font-inter flex items-center justify-center space-x-2">
+                    <Mail className="w-4 h-4" />
+                    <span>Napisz e-mail</span>
                   </button>
                 </div>
               </div>
             </div>
-          ))}
+          </div>
         </div>
       </div>
     </section>
