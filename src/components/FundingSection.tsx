@@ -1,6 +1,5 @@
-
 import React from 'react';
-import { Phone, Mail, ExternalLink, Check } from 'lucide-react';
+import { Phone, Mail, ExternalLink, Check, Info } from 'lucide-react';
 import SectionHeader from './SectionHeader';
 
 const FundingSection: React.FC = () => {
@@ -48,6 +47,23 @@ const FundingSection: React.FC = () => {
           title="Dostępne programy dofinansowania"
           description="Sprawdź, z jakich programów możesz skorzystać, aby obniżyć koszty szkoleń dla Twojego zespołu."
         />
+
+        {/* Funding Information Banner */}
+        <div className="bg-gradient-to-r from-blue-50 to-indigo-50 border border-blue-200 rounded-xl p-6 mb-12 animate-fade-in-up">
+          <div className="flex items-start space-x-4">
+            <div className="flex-shrink-0 w-8 h-8 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center">
+              <Info className="w-5 h-5" />
+            </div>
+            <div>
+              <h3 className="text-lg font-semibold text-slate-800 mb-2 font-inter">
+                Dofinansowanie do szkoleń
+              </h3>
+              <p className="text-slate-700 leading-relaxed font-inter">
+                Wszystkie szkolenia oferowane przez <strong>Presto Consulting</strong> mogą być objęte <strong>DOFINANSOWANIEM</strong> w ramach dostępnych programów wsparcia dla przedsiębiorców. Sprawdź poniżej, z których programów możesz skorzystać, aby znacząco obniżyć koszty rozwoju swojego zespołu.
+              </p>
+            </div>
+          </div>
+        </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
           {programs.map((program, index) => (
