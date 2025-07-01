@@ -42,9 +42,9 @@ const Index = () => {
 
       <MissionSection scrollToSection={scrollToSection} />
 
-      <FundingSection />
-
       <OffersSection />
+
+      <FundingSection />
 
       <BenefitsSection />
 
