@@ -1,32 +1,29 @@
 
 import React from 'react';
+import { TrendingUp, Award, Target, BarChart3 } from 'lucide-react';
 import SectionHeader from './SectionHeader';
 
 const BenefitsSection: React.FC = () => {
   const benefits = [
     {
-      icon: "https://halstein.qodeinteractive.com/wp-content/uploads/2021/11/icon-h6-01.png",
+      icon: TrendingUp,
       title: "Podnieś kompetencje zespołu",
       description: "Rozwijaj umiejętności, które budują przewagę Twojej firmy na rynku.",
-      alt: "Ikona Podnieś kompetencje zespołu"
     },
     {
-      icon: "https://halstein.qodeinteractive.com/wp-content/uploads/2021/11/icon-h6-02.png",
+      icon: Award,
       title: "Sprawdzone metody i doświadczenie",
       description: "Korzystasz z praktyk wypracowanych w setkach szkoleń i projektów.",
-      alt: "Ikona Sprawdzone metody i doświadczenie"
     },
     {
-      icon: "https://halstein.qodeinteractive.com/wp-content/uploads/2021/11/icon-h6-03.png",
+      icon: Target,
       title: "Szkolenia dopasowane do branży",
       description: "Uczysz się tego, co naprawdę działa w Twoim środowisku biznesowym.",
-      alt: "Ikona Szkolenia dopasowane do branży"
     },
     {
-      icon: "https://halstein.qodeinteractive.com/wp-content/uploads/2021/11/icon-h6-04.png",
+      icon: BarChart3,
       title: "Efekty widoczne w działaniu",
       description: "Zdobywasz wiedzę, która przekłada się na realne zmiany w organizacji.",
-      alt: "Ikona Efekty widoczne w działaniu"
     }
   ];
 
@@ -42,34 +39,28 @@ const BenefitsSection: React.FC = () => {
           {benefits.map((benefit, index) => (
             <div 
               key={index} 
-              className={`group flex flex-col items-start p-8 rounded-2xl shadow-soft bg-gradient-to-br from-gray-50/70 to-white/70 backdrop-blur-sm transition-all duration-500 hover:shadow-large hover:scale-105 hover:bg-white/80 border border-gray-100/50 animate-fade-in-up`}
+              className={`group bg-white rounded-xl border border-gray-100 p-8 shadow-soft hover:shadow-medium transition-all duration-300 hover:-translate-y-1 animate-fade-in-up`}
               style={{ animationDelay: `${index * 150}ms` }}
             >
-              <div className="relative mb-6">
-                <img
-                  src={benefit.icon}
-                  alt={benefit.alt}
-                  className="w-16 h-16 transition-all duration-300 group-hover:scale-110 group-hover:rotate-6"
-                  onError={(e) => { 
-                    const target = e.target as HTMLImageElement;
-                    target.src = `https://placehold.co/60x60/ADD8E6/000000?text=Icon+${index + 1}`; 
-                  }}
-                  loading="lazy"
-                />
-                <div className="absolute inset-0 bg-gradient-to-r from-primary-500/20 to-transparent rounded-full blur-lg opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+              <div className="flex items-start space-x-6">
+                <div className="flex-shrink-0 w-14 h-14 bg-slate-100 text-slate-600 rounded-lg flex items-center justify-center group-hover:bg-slate-200 transition-colors duration-300">
+                  <benefit.icon className="w-7 h-7" />
+                </div>
+                <div className="flex-1">
+                  <div className="flex items-center space-x-3 mb-4">
+                    <span className="text-sm font-semibold text-slate-400 tracking-wider">
+                      {String(index + 1).padStart(2, '0')}
+                    </span>
+                    <div className="h-px bg-slate-200 flex-1"></div>
+                  </div>
+                  <h3 className="text-xl font-bold text-slate-800 mb-3 font-inter group-hover:text-slate-900 transition-colors duration-300">
+                    {benefit.title}
+                  </h3>
+                  <p className="text-slate-600 leading-relaxed font-inter text-sm group-hover:text-slate-700 transition-colors duration-300">
+                    {benefit.description}
+                  </p>
+                </div>
               </div>
-              <h3 className="text-2xl font-semibold text-gray-800 mb-4 font-inter group-hover:text-primary-700 transition-colors duration-300">
-                {benefit.title}
-              </h3>
-              <p className="text-gray-600 mb-6 leading-relaxed font-inter group-hover:text-gray-700 transition-colors duration-300">
-                {benefit.description}
-              </p>
-              <a href="#" className="inline-flex items-center text-primary-600 font-semibold hover:text-primary-700 transition-all duration-300 font-inter group-hover:translate-x-1">
-                View more
-                <svg className="ml-2 w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
-                </svg>
-              </a>
             </div>
           ))}
         </div>
