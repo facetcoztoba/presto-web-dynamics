@@ -8,7 +8,6 @@ interface ProgramCardProps {
   index: number;
   icon: LucideIcon;
   delay?: number;
-  variant?: 'default' | 'green' | 'purple' | 'orange' | 'pink' | 'teal';
 }
 
 const ProgramCard: React.FC<ProgramCardProps> = ({ 
@@ -16,82 +15,31 @@ const ProgramCard: React.FC<ProgramCardProps> = ({
   text, 
   index, 
   icon: Icon, 
-  delay = 0,
-  variant = 'default'
+  delay = 0
 }) => {
-  const getVariantStyles = () => {
-    switch (variant) {
-      case 'green':
-        return {
-          cardBg: 'bg-gradient-to-br from-green-50 to-emerald-100/50',
-          iconBg: 'bg-gradient-to-br from-green-500 to-emerald-600',
-          iconShadow: 'shadow-green-200',
-          titleHover: 'group-hover:text-green-700',
-          hoverEffect: 'hover:shadow-green-100/50'
-        };
-      case 'purple':
-        return {
-          cardBg: 'bg-gradient-to-br from-purple-50 to-violet-100/50',
-          iconBg: 'bg-gradient-to-br from-purple-500 to-violet-600',
-          iconShadow: 'shadow-purple-200',
-          titleHover: 'group-hover:text-purple-700',
-          hoverEffect: 'hover:shadow-purple-100/50'
-        };
-      case 'orange':
-        return {
-          cardBg: 'bg-gradient-to-br from-orange-50 to-amber-100/50',
-          iconBg: 'bg-gradient-to-br from-orange-500 to-amber-600',
-          iconShadow: 'shadow-orange-200',
-          titleHover: 'group-hover:text-orange-700',
-          hoverEffect: 'hover:shadow-orange-100/50 hover:rotate-1'
-        };
-      case 'pink':
-        return {
-          cardBg: 'bg-gradient-to-br from-pink-50 to-rose-100/50',
-          iconBg: 'bg-gradient-to-br from-pink-500 to-rose-600',
-          iconShadow: 'shadow-pink-200',
-          titleHover: 'group-hover:text-pink-700',
-          hoverEffect: 'hover:shadow-pink-100/50'
-        };
-      case 'teal':
-        return {
-          cardBg: 'bg-gradient-to-br from-teal-50 to-cyan-100/50',
-          iconBg: 'bg-gradient-to-br from-teal-500 to-cyan-600',
-          iconShadow: 'shadow-teal-200',
-          titleHover: 'group-hover:text-teal-700',
-          hoverEffect: 'hover:shadow-teal-100/50 hover:-translate-y-2'
-        };
-      default:
-        return {
-          cardBg: 'bg-white/70',
-          iconBg: 'bg-gradient-to-br from-primary-600 to-primary-700',
-          iconShadow: 'shadow-medium',
-          titleHover: 'group-hover:text-primary-700',
-          hoverEffect: 'hover:shadow-medium'
-        };
-    }
-  };
-
-  const styles = getVariantStyles();
-  const isReversed = variant === 'green' || variant === 'orange';
-  const iconSize = variant === 'purple' ? 'w-14 h-14' : 'w-12 h-12';
-  const iconScale = variant === 'purple' ? 'w-7 h-7' : 'w-6 h-6';
-
   return (
     <div 
-      className={`group flex ${isReversed ? 'flex-row-reverse' : 'items-start'} p-6 rounded-2xl ${styles.cardBg} backdrop-blur-sm shadow-soft ${styles.hoverEffect} transition-all duration-300 hover:scale-105 animate-fade-in-up`}
+      className="group bg-white rounded-xl border border-gray-100 p-8 shadow-soft hover:shadow-medium transition-all duration-300 hover:-translate-y-1 animate-fade-in-up"
       style={{ animationDelay: `${delay}ms` }}
     >
-      <div className={`flex-shrink-0 ${iconSize} ${styles.iconBg} text-white rounded-xl flex items-center justify-center ${isReversed ? 'ml-6' : 'mr-6'} ${styles.iconShadow} group-hover:shadow-large transition-all duration-300 group-hover:scale-110`}>
-        <Icon className={iconScale} />
-      </div>
-      <div className={isReversed ? 'text-right' : ''}>
-        <h4 className={`text-2xl font-semibold text-gray-800 mb-3 font-inter ${styles.titleHover} transition-colors duration-300`}>
-          {title}
-        </h4>
-        <p className="text-gray-600 leading-relaxed font-inter group-hover:text-gray-700 transition-colors duration-300">
-          {text}
-        </p>
+      <div className="flex items-start space-x-6">
+        <div className="flex-shrink-0 w-14 h-14 bg-slate-100 text-slate-600 rounded-lg flex items-center justify-center group-hover:bg-slate-200 transition-colors duration-300">
+          <Icon className="w-7 h-7" />
+        </div>
+        <div className="flex-1">
+          <div className="flex items-center space-x-3 mb-4">
+            <span className="text-sm font-semibold text-slate-400 tracking-wider">
+              {String(index).padStart(2, '0')}
+            </span>
+            <div className="h-px bg-slate-200 flex-1"></div>
+          </div>
+          <h4 className="text-xl font-bold text-slate-800 mb-3 font-inter group-hover:text-slate-900 transition-colors duration-300">
+            {title}
+          </h4>
+          <p className="text-slate-600 leading-relaxed font-inter text-sm group-hover:text-slate-700 transition-colors duration-300">
+            {text}
+          </p>
+        </div>
       </div>
     </div>
   );
