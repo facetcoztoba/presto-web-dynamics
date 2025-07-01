@@ -32,11 +32,11 @@ const ContactForm: React.FC = () => {
   };
 
   return (
-    <div className="bg-gradient-to-br from-gray-50/80 to-white/80 backdrop-blur-sm p-8 rounded-2xl shadow-soft border border-gray-100/50">
-      <h3 className="text-2xl font-semibold mb-6 font-inter text-gray-800">Formularz Kontaktowy</h3>
+    <div className="bg-surface-secondary/80 backdrop-blur-sm p-8 rounded-2xl shadow-soft border border-border/50">
+      <h3 className="text-2xl font-semibold mb-6 font-inter text-foreground">Formularz Kontaktowy</h3>
       <form onSubmit={handleSubmit} className="space-y-6">
         <div className="group">
-          <label htmlFor="name" className="block text-gray-700 text-sm font-bold mb-2 font-inter transition-colors duration-300 group-focus-within:text-primary-600">
+          <label htmlFor="name" className="block text-foreground text-sm font-bold mb-2 font-inter transition-colors duration-300 group-focus-within:text-primary-light">
             Imię i Nazwisko
           </label>
           <input 
@@ -46,12 +46,12 @@ const ContactForm: React.FC = () => {
             value={formData.name}
             onChange={handleChange}
             required
-            className="w-full py-3 px-4 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all duration-300 bg-white/70 backdrop-blur-sm font-inter hover:border-primary-300" 
+            className="w-full py-3 px-4 border border-border rounded-xl focus:outline-none focus:ring-2 focus:ring-primary-light focus:border-transparent transition-all duration-300 bg-surface-primary/70 backdrop-blur-sm font-inter hover:border-primary-light/50"
             placeholder="Twoje imię i nazwisko" 
           />
         </div>
         <div className="group">
-          <label htmlFor="email" className="block text-gray-700 text-sm font-bold mb-2 font-inter transition-colors duration-300 group-focus-within:text-primary-600">
+          <label htmlFor="email" className="block text-foreground text-sm font-bold mb-2 font-inter transition-colors duration-300 group-focus-within:text-primary-light">
             Email
           </label>
           <input 
@@ -61,12 +61,12 @@ const ContactForm: React.FC = () => {
             value={formData.email}
             onChange={handleChange}
             required
-            className="w-full py-3 px-4 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all duration-300 bg-white/70 backdrop-blur-sm font-inter hover:border-primary-300" 
+            className="w-full py-3 px-4 border border-border rounded-xl focus:outline-none focus:ring-2 focus:ring-primary-light focus:border-transparent transition-all duration-300 bg-surface-primary/70 backdrop-blur-sm font-inter hover:border-primary-light/50" 
             placeholder="Twój adres email" 
           />
         </div>
         <div className="group">
-          <label htmlFor="message" className="block text-gray-700 text-sm font-bold mb-2 font-inter transition-colors duration-300 group-focus-within:text-primary-600">
+          <label htmlFor="message" className="block text-foreground text-sm font-bold mb-2 font-inter transition-colors duration-300 group-focus-within:text-primary-light">
             Wiadomość
           </label>
           <textarea 
@@ -76,14 +76,14 @@ const ContactForm: React.FC = () => {
             onChange={handleChange}
             required
             rows={5} 
-            className="w-full py-3 px-4 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all duration-300 bg-white/70 backdrop-blur-sm font-inter hover:border-primary-300 resize-none" 
+            className="w-full py-3 px-4 border border-border rounded-xl focus:outline-none focus:ring-2 focus:ring-primary-light focus:border-transparent transition-all duration-300 bg-surface-primary/70 backdrop-blur-sm font-inter hover:border-primary-light/50 resize-none" 
             placeholder="Twoja wiadomość"
           />
         </div>
         <button 
           type="submit" 
           disabled={isSubmitting}
-          className="group bg-gradient-to-r from-primary-600 to-primary-700 text-white px-8 py-4 rounded-full hover:from-primary-700 hover:to-primary-800 transition-all duration-300 shadow-medium font-semibold font-inter tracking-wide hover:shadow-large hover:scale-105 active:scale-95 disabled:opacity-50 disabled:cursor-not-allowed"
+          className="group bg-gradient-to-r from-primary-light to-primary text-primary-foreground px-8 py-4 rounded-full hover:from-primary hover:to-primary-hover transition-all duration-300 shadow-medium font-semibold font-inter tracking-wide hover:shadow-large hover:scale-105 active:scale-95 disabled:opacity-50 disabled:cursor-not-allowed"
         >
           <span className="flex items-center">
             {isSubmitting ? 'Wysyłanie...' : 'Wyślij wiadomość'}

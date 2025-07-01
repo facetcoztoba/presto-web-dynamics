@@ -4,9 +4,9 @@ import Accordion from './Accordion';
 
 const WhyChooseUsSection: React.FC = () => {
   return (
-    <section className="flex flex-col md:flex-row min-h-[60vh] bg-gradient-to-br from-gray-100 to-gray-50">
+    <section className="flex flex-col md:flex-row min-h-[60vh] bg-gradient-section">
       <div className="w-full md:w-1/2 flex items-center justify-center p-8 md:p-0 relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-r from-transparent to-white/30"></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-transparent to-surface-primary/30"></div>
         <img
           src="https://halstein.qodeinteractive.com/wp-content/uploads/2021/10/h6-img-03.png"
           alt="Obraz firmowy"
@@ -18,14 +18,14 @@ const WhyChooseUsSection: React.FC = () => {
           loading="lazy"
         />
       </div>
-      <div className="w-full md:w-1/2 bg-gradient-to-br from-gray-50/80 to-white/80 backdrop-blur-sm p-8 md:p-16 flex flex-col justify-center">
+      <div className="w-full md:w-1/2 bg-surface-secondary/80 backdrop-blur-sm p-8 md:p-16 flex flex-col justify-center">
         <div className="animate-fade-in-up">
-          <h3 className="text-3xl md:text-4xl font-extrabold text-gray-800 mb-6 font-inter">
+          <h3 className="text-3xl md:text-4xl font-extrabold text-foreground mb-6 font-inter">
             Umiejętności, które 
-            <span className="bg-gradient-to-r from-primary-600 to-primary-700 bg-clip-text text-transparent"> napędzają rozwój</span> 
+            <span className="bg-gradient-to-r from-primary-light to-primary bg-clip-text text-transparent"> napędzają rozwój</span> 
             Twojej firmy
           </h3>
-          <p className="text-gray-600 mb-8 text-lg leading-relaxed font-inter">
+          <p className="text-muted-foreground mb-8 text-lg leading-relaxed font-inter">
             Nasze szkolenia to nie tylko wiedza – to praktyczne narzędzia, które realnie wspierają efektywność i przewagę konkurencyjną.
           </p>
 
