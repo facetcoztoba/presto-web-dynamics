@@ -18,7 +18,7 @@ const CallToActionBar: React.FC<CallToActionBarProps> = ({ scrollToSection }) =>
       </h3>
       <button
         onClick={() => scrollToSection('kontakt')}
-        className="relative group bg-primary-foreground text-primary px-10 py-4 rounded-full font-semibold hover:bg-secondary-hover transition-all duration-300 shadow-medium font-inter tracking-wide hover:shadow-large hover:scale-105 active:scale-95 animate-pulse"
+        className="relative group bg-primary-foreground text-primary px-10 py-4 rounded-full font-semibold hover:bg-secondary-hover transition-all duration-300 shadow-medium font-inter tracking-wide hover:shadow-large hover:scale-105 active:scale-95"
       >
         <span className="flex items-center">
           Kontakt
