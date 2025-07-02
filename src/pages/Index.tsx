@@ -38,11 +38,11 @@ const Index = () => {
 
       <HeroSection scrollToSection={scrollToSection} />
 
+      <OffersSection />
+
       <ProgramsSection />
 
       <MissionSection scrollToSection={scrollToSection} />
-
-      <OffersSection />
 
       <FundingSection />
 
