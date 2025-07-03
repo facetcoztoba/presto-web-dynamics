@@ -38,49 +38,73 @@ const OffersSection: React.FC = () => {
   ];
 
   return (
-    <section className="py-20 px-6 md:px-12 bg-gradient-section">
+    <section className="py-20 px-6 md:px-12 bg-gradient-section overflow-hidden">
       <div className="max-w-7xl mx-auto">
         <SectionHeader 
           subtitle="Nasze specjalizacje"
           title="Rozwój zawodowy dla Twojej firmy - nasze programy szkoleniowe."
         />
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        {/* Responsive Grid - Modern Layout */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-4 gap-6 lg:gap-8">
           {offers.map((program, index) => (
             <div 
               key={index} 
-              className="group bg-surface-primary/80 backdrop-blur-sm p-8 rounded-2xl shadow-soft flex flex-col justify-between transition-all duration-500 hover:shadow-large hover:scale-105 hover:bg-surface-primary/90 border border-border/50 animate-fade-in-up"
-              style={{ animationDelay: `${index * 200}ms` }}
+              className="group relative bg-surface-primary/85 backdrop-blur-md p-6 lg:p-8 rounded-3xl shadow-soft flex flex-col justify-between transition-all duration-700 hover:shadow-large hover:-translate-y-2 hover:bg-surface-primary/95 border border-border/30 hover:border-primary-light/20 animate-fade-in-up overflow-hidden"
+              style={{ 
+                animationDelay: `${index * 150}ms`,
+                minHeight: '420px' // Consistent card height
+              }}
             >
-              <div>
-                <div className="relative overflow-hidden mb-4">
-                  <h3 className="text-xl font-bold text-primary-light mb-2 font-inter transition-all duration-300 group-hover:text-primary-light-hover">
+              {/* Gradient overlay for depth */}
+              <div className="absolute inset-0 bg-gradient-to-br from-primary-light/5 via-transparent to-primary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-700 rounded-3xl"></div>
+              
+              {/* Content */}
+              <div className="relative z-10">
+                <div className="relative overflow-hidden mb-6">
+                  {/* Icon/Badge */}
+                  <div className="inline-flex items-center justify-center w-12 h-12 bg-primary-light/10 rounded-2xl mb-4 group-hover:bg-primary-light/20 transition-all duration-500">
+                    <div className="w-6 h-6 bg-primary-light/60 rounded-lg group-hover:bg-primary-light/80 transition-all duration-500"></div>
+                  </div>
+                  
+                  <h3 className="text-sm font-bold text-primary-light mb-3 font-inter uppercase tracking-wider transition-all duration-300 group-hover:text-primary-light-hover">
                     {program.subtitle}
                   </h3>
-                  <h4 className="text-3xl font-extrabold text-primary mb-4 font-inter group-hover:text-primary-hover transition-colors duration-300">
+                  <h4 className="text-2xl lg:text-3xl font-extrabold text-primary mb-5 font-inter group-hover:text-primary-hover transition-colors duration-300 leading-tight">
                     {program.title}
                   </h4>
                 </div>
-                <p className="text-muted-foreground mb-4 font-inter leading-relaxed">
-                  <strong>{program.description}</strong>
-                </p>
-                <p className="text-muted-foreground mb-4 font-inter leading-relaxed">{program.details}</p>
-                <p className="text-muted-foreground mb-6 font-inter leading-relaxed">{program.outcome}</p>
+                
+                <div className="space-y-3 mb-6">
+                  <p className="text-muted-foreground font-inter leading-relaxed text-sm lg:text-base">
+                    <strong className="text-foreground">{program.description}</strong>
+                  </p>
+                  <p className="text-muted-foreground font-inter leading-relaxed text-sm opacity-90">{program.details}</p>
+                  <p className="text-muted-foreground font-inter leading-relaxed text-sm opacity-85">{program.outcome}</p>
+                </div>
               </div>
-              <a
-                href={program.link}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center text-primary-light font-semibold hover:text-primary-light-hover transition-all duration-300 font-inter group-hover:translate-x-1"
-              >
-                Program szkolenia
-                <svg className="ml-2 w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
-                </svg>
-              </a>
+              
+              {/* CTA Button */}
+              <div className="relative z-10 mt-auto">
+                <a
+                  href={program.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-between w-full px-6 py-3 bg-primary-light/10 hover:bg-primary-light/20 rounded-2xl text-primary-light font-semibold hover:text-primary-light-hover transition-all duration-300 font-inter group-hover:translate-x-1 border border-primary-light/20 hover:border-primary-light/40"
+                >
+                  <span>Program szkolenia</span>
+                  <svg className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                  </svg>
+                </a>
+              </div>
             </div>
           ))}
         </div>
+
+        {/* Additional decorative elements */}
+        <div className="absolute -top-20 -right-20 w-40 h-40 bg-primary-light/5 rounded-full blur-3xl opacity-50"></div>
+        <div className="absolute -bottom-20 -left-20 w-40 h-40 bg-primary/5 rounded-full blur-3xl opacity-50"></div>
       </div>
     </section>
   );
