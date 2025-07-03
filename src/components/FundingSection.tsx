@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { Phone, Mail, DollarSign, BadgePercent } from 'lucide-react';
+import { Phone, Mail, DollarSign, BadgePercent, ExternalLink } from 'lucide-react';
 import SectionHeader from './SectionHeader';
 
 const FundingSection: React.FC = () => {
@@ -53,9 +53,18 @@ const FundingSection: React.FC = () => {
                 <p className="text-sm text-slate-600 font-inter mb-3 relative z-10">
                   Program dla małych i średnich przedsiębiorstw oraz osób indywidualnych
                 </p>
-                <div className="text-sm text-slate-700 font-inter relative z-10">
+                <div className="text-sm text-slate-700 font-inter relative z-10 mb-4">
                   <span className="font-medium">Maksymalnie 5 000 zł na osobę</span> • Szkolenia dla maksymalnie 3 osób z firmy
                 </div>
+                <a 
+                  href="https://uslugirozwojowe.parp.gov.pl/wyszukiwarka/dostawca-uslug/podglad?id=179110"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center space-x-2 text-sm text-blue-600 hover:text-blue-800 transition-colors duration-300 relative z-10"
+                >
+                  <ExternalLink className="w-4 h-4" />
+                  <span>Zobacz profil w BUR</span>
+                </a>
               </div>
 
               {/* KFS Program */}
