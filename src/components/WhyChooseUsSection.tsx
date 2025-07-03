@@ -1,6 +1,6 @@
 import React from 'react';
 import Accordion from './Accordion';
-import { TrendingUp, Target, Users, Lightbulb, BarChart3, Settings, TeamIcon, Zap } from 'lucide-react';
+import { TrendingUp, Target, Users, Lightbulb, BarChart3, Settings, Zap } from 'lucide-react';
 
 const WhyChooseUsSection: React.FC = () => {
   return (
