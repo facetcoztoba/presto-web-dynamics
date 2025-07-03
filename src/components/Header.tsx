@@ -1,14 +1,17 @@
-
 import React from 'react';
 import { Menu, X } from 'lucide-react';
 
 interface HeaderProps {
   isMobileMenuOpen: boolean;
-  toggleMobileMenu: () => void;
+  setIsMobileMenuOpen: React.Dispatch<React.SetStateAction<boolean>>;
   scrollToSection: (id: string) => void;
 }
 
-const Header: React.FC<HeaderProps> = ({ isMobileMenuOpen, toggleMobileMenu, scrollToSection }) => {
+const Header: React.FC<HeaderProps> = ({ isMobileMenuOpen, setIsMobileMenuOpen, scrollToSection }) => {
+  const toggleMobileMenu = () => {
+    setIsMobileMenuOpen(!isMobileMenuOpen);
+  };
+
   return (
     <>
       <header className="fixed w-full bg-surface-primary/95 backdrop-blur-md shadow-soft z-50 py-4 px-6 md:px-12 flex justify-between items-center transition-all duration-300">
