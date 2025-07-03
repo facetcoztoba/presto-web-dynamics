@@ -45,6 +45,8 @@ const App = () => { // Zmieniono nazwę komponentu na App, aby pasowała do domy
 
         <OffersSection />
 
+        <CallToActionBar scrollToSection={scrollToSection} />
+        
         <ProgramsSection />
 
         <MissionSection scrollToSection={scrollToSection} />
@@ -54,8 +56,6 @@ const App = () => { // Zmieniono nazwę komponentu na App, aby pasowała do domy
         <BenefitsSection />
 
         <WhyChooseUsSection />
-
-        <CallToActionBar scrollToSection={scrollToSection} />
 
         <StatisticsSection />
 
