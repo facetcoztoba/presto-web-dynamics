@@ -2,7 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here.
 All colors MUST be HSL.
 */
 
@@ -21,24 +21,24 @@ All colors MUST be HSL.
     --radius: 0.5rem;
 
     /* Brand Colors - Core Identity */
-    --brand-navy: 221 53% 15%;        /* #121D35 */
-    --brand-cream: 38 67% 92%;        /* #F4EBE2 */
-    --brand-blue-light: 213 95% 78%;  /* #93c5fd */
-    --brand-blue: 220 91% 63%;        /* #2563eb */
-    --brand-blue-dark: 226 85% 49%;   /* #1d4ed8 */
+    --brand-navy: 221 53% 15%;         /* #121D35 */
+    --brand-cream: 38 67% 92%;         /* #F4EBE2 */
+    --brand-blue-light: 213 95% 78%;   /* #93c5fd */
+    --brand-blue: 220 91% 63%;         /* #2563eb */
+    --brand-blue-dark: 226 85% 49%;    /* #1d4ed8 */
 
     /* Semantic Color System */
-    --primary: 221 53% 15%;           /* brand-navy */
+    --primary: 221 53% 15%;            /* brand-navy */
     --primary-foreground: 210 40% 98%;
-    --primary-hover: 221 53% 20%;     /* darker navy */
-    --primary-light: 220 91% 63%;     /* brand-blue */
+    --primary-hover: 221 53% 20%;      /* darker navy */
+    --primary-light: 220 91% 63%;      /* brand-blue */
     --primary-light-hover: 226 85% 49%; /* brand-blue-dark */
 
     --secondary: 210 40% 96.1%;
     --secondary-foreground: 221 53% 15%;
     --secondary-hover: 210 40% 92%;
 
-    --accent: 213 95% 78%;            /* brand-blue-light */
+    --accent: 213 95% 78%;             /* brand-blue-light */
     --accent-foreground: 221 53% 15%;
     --accent-hover: 213 95% 73%;
 
@@ -49,15 +49,15 @@ All colors MUST be HSL.
     --destructive-foreground: 210 40% 98%;
 
     /* Surface Colors */
-    --surface-primary: 0 0% 100%;     /* white */
+    --surface-primary: 0 0% 100%;      /* white */
     --surface-secondary: 210 40% 98%; /* very light gray */
     --surface-tertiary: 210 40% 96.1%; /* light gray */
-    --surface-accent: 38 67% 97%;     /* very light cream */
+    --surface-accent: 38 67% 97%;      /* very light cream */
     
     /* Section Backgrounds */
-    --section-primary: 210 40% 98%;   /* light neutral */
-    --section-secondary: 0 0% 100%;   /* white */
-    --section-accent: 38 67% 97%;     /* light cream */
+    --section-primary: 210 40% 98%;    /* light neutral */
+    --section-secondary: 0 0% 100%;    /* white */
+    --section-accent: 38 67% 97%;      /* light cream */
     
     /* Gradients */
     --gradient-primary: linear-gradient(135deg, hsl(var(--brand-navy)), hsl(var(--brand-blue-dark)));
@@ -100,11 +100,11 @@ All colors MUST be HSL.
     --ring: 212.7 26.8% 83.9%;
 
     /* Brand Colors - Dark Mode Adapted */
-    --brand-navy: 221 53% 25%;        /* lighter navy for dark mode */
-    --brand-cream: 38 67% 15%;        /* darker cream for dark mode */
-    --brand-blue-light: 213 95% 78%;  /* keep same */
-    --brand-blue: 220 91% 63%;        /* keep same */
-    --brand-blue-dark: 226 85% 49%;   /* keep same */
+    --brand-navy: 221 53% 25%;         /* lighter navy for dark mode */
+    --brand-cream: 38 67% 15%;         /* darker cream for dark mode */
+    --brand-blue-light: 213 95% 78%;   /* keep same */
+    --brand-blue: 220 91% 63%;         /* keep same */
+    --brand-blue-dark: 226 85% 49%;    /* keep same */
 
     /* Semantic Colors - Dark Mode */
     --primary: 210 40% 98%;
