@@ -1,64 +1,70 @@
+import React, { useState, lazy, Suspense } from 'react';
 
-import React, { useState } from 'react';
-import Header from '../components/Header';
-import HeroSection from '../components/HeroSection';
-import ProgramsSection from '../components/ProgramsSection';
-import MissionSection from '../components/MissionSection';
-import FundingSection from '../components/FundingSection';
-import OffersSection from '../components/OffersSection';
-import BenefitsSection from '../components/BenefitsSection';
-import WhyChooseUsSection from '../components/WhyChooseUsSection';
-import CallToActionBar from '../components/CallToActionBar';
-import StatisticsSection from '../components/StatisticsSection';
-import ContactSection from '../components/ContactSection';
-import Footer from '../components/Footer';
+// Leniwe ładowanie komponentów dla optymalizacji wydajności
+const Header = lazy(() => import('../components/Header'));
+const HeroSection = lazy(() => import('../components/HeroSection'));
+const ProgramsSection = lazy(() => import('../components/ProgramsSection'));
+const MissionSection = lazy(() => import('../components/MissionSection'));
+const FundingSection = lazy(() => import('../components/FundingSection'));
+const OffersSection = lazy(() => import('../components/OffersSection'));
+const BenefitsSection = lazy(() => import('../components/BenefitsSection'));
+const WhyChooseUsSection = lazy(() => import('../components/WhyChooseUsSection'));
+const CallToActionBar = lazy(() => import('../components/CallToActionBar'));
+const StatisticsSection = lazy(() => import('../components/StatisticsSection'));
+const ContactSection = lazy(() => import('../components/ContactSection'));
+const Footer = lazy(() => import('../components/Footer'));
 
-const Index = () => {
+const App = () => { // Zmieniono nazwę komponentu na App, aby pasowała do domyślnego eksportu
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
-  const toggleMobileMenu = () => {
-    setIsMobileMenuOpen(!isMobileMenuOpen);
-  };
-
+  // Funkcja do przewijania do sekcji
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' });
+      // Zamknij menu mobilne po przewinięciu
       setIsMobileMenuOpen(false);
     }
   };
 
   return (
     <div className="font-inter antialiased text-gray-900">
-      <Header 
-        isMobileMenuOpen={isMobileMenuOpen}
-        toggleMobileMenu={toggleMobileMenu}
-        scrollToSection={scrollToSection}
-      />
+      {/* Suspense fallback wyświetlany podczas ładowania komponentów */}
+      <Suspense fallback={
+        <div className="flex justify-center items-center h-screen text-lg">
+          Ładowanie zawartości...
+        </div>
+      }>
+        <Header
+          isMobileMenuOpen={isMobileMenuOpen}
+          setIsMobileMenuOpen={setIsMobileMenuOpen} // Bezpośrednie przekazanie settera
+          scrollToSection={scrollToSection}
+        />
 
-      <HeroSection scrollToSection={scrollToSection} />
+        <HeroSection scrollToSection={scrollToSection} />
 
-      <OffersSection />
+        <OffersSection />
 
-      <ProgramsSection />
+        <ProgramsSection />
 
-      <MissionSection scrollToSection={scrollToSection} />
+        <MissionSection scrollToSection={scrollToSection} />
 
-      <FundingSection />
+        <FundingSection />
 
-      <BenefitsSection />
+        <BenefitsSection />
 
-      <WhyChooseUsSection />
+        <WhyChooseUsSection />
 
-      <CallToActionBar scrollToSection={scrollToSection} />
+        <CallToActionBar scrollToSection={scrollToSection} />
 
-      <StatisticsSection />
+        <StatisticsSection />
 
-      <ContactSection />
+        <ContactSection />
 
-      <Footer />
+        <Footer />
+      </Suspense>
     </div>
   );
 };
 
-export default Index;
+export default App; // Domyślny eksport komponentu App
