@@ -16,15 +16,15 @@ const OffersSection: React.FC = () => {
       subtitle: "SPECJALISTA DS.",
       description: "Zaawansowane szkolenie z zakresu metodyk zarządzania projektami obejmujące uznane standardy branżowe.",
       details: "Program wprowadza w inicjowanie, planowanie, realizację i zamykanie projektów z wykorzystaniem nowoczesnych narzędzi i technik.",
-      outcome: "Szczególny nacisk położony na zarządzanie ryzykiem, zespołami projektowymi oraz optymalizację procesów w różnych środowiskach organizacyjnych i branżowych.",
+      outcome: "Uczestnicy nabędą umiejętności zarządzania ryzykiem, zespołami projektowymi oraz optymalizacji procesów w różnych środowiskach organizacyjnych i branżowych.",
       link: "/wp-content/uploads/2025/06/Zarzadzanie_projektami_Opis_szkolenia.pdf"
     },
     {
       title: "SZTUCZNEJ INTELIGENCJI",
       subtitle: "SPECJALISTA DS.",
       description: "Innowacyjny program szkoleniowy wprowadzający w świat sztucznej inteligencji z perspektywą zrównoważonego rozwoju.",
-      details: "Obejmuje zastosowanie technologii w optymalizacji procesów przemysłowych, zarządzaniu energią i ochronie środowiska.",
-      outcome: "Uczestnicy poznają techniki komunikacji z modelami językowymi, narzędzia oparte o sztuczną inteligencję oraz aspekty etyczne i prawne wykorzystania nowoczesnych technologii.",
+      details: "Program obejmuje zastosowanie technologii w optymalizacji procesów przemysłowych, zarządzaniu energią i ochronie środowiska.",
+      outcome: "Uczestnicy nabędą umiejętności komunikacji z modelami językowymi, wykorzystania narzędzi opartych o sztuczną inteligencję oraz poznają aspekty etyczne i prawne nowoczesnych technologii.",
       link: "/wp-content/uploads/2025/06/Specjalista_ds_sztucznej_inteligencji_Opis_szkolenia.pdf"
     },
     {
@@ -32,7 +32,7 @@ const OffersSection: React.FC = () => {
       subtitle: "SPECJALISTA DS.",
       description: "Nowoczesne szkolenie łączące zieloną transformację biznesu z praktycznym wykorzystaniem sztucznej inteligencji w codziennej pracy.",
       details: "Program koncentruje się na praktycznym wykorzystaniu ChatGPT w różnych obszarach biznesowych, automatyzacji procesów i wspieraniu zrównoważonego rozwoju przedsiębiorstw.",
-      outcome: "Uczestnicy nauczą się wykorzystywać AI do optymalizacji procesów, redukcji kosztów operacyjnych i wspierania zrównoważonego rozwoju w swojej organizacji.",
+      outcome: "Uczestnicy nabędą umiejętności wykorzystywania AI do optymalizacji procesów, redukcji kosztów operacyjnych i wspierania zrównoważonego rozwoju w swojej organizacji.",
       link: "#" // Placeholder - do uzupełnienia przez klienta
     }
   ];
