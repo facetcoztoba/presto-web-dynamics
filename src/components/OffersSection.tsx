@@ -26,18 +26,26 @@ const OffersSection: React.FC = () => {
       details: "Obejmuje zastosowanie technologii w optymalizacji procesów przemysłowych, zarządzaniu energią i ochronie środowiska.",
       outcome: "Uczestnicy poznają techniki komunikacji z modelami językowymi, narzędzia oparte o sztuczną inteligencję oraz aspekty etyczne i prawne wykorzystania nowoczesnych technologii.",
       link: "/wp-content/uploads/2025/06/Specjalista_ds_sztucznej_inteligencji_Opis_szkolenia.pdf"
+    },
+    {
+      title: "OPTYMALIZACJI PROCESÓW Z CHATGPT",
+      subtitle: "SPECJALISTA DS.",
+      description: "Nowoczesne szkolenie łączące zieloną transformację biznesu z praktycznym wykorzystaniem sztucznej inteligencji w codziennej pracy.",
+      details: "Program koncentruje się na praktycznym wykorzystaniu ChatGPT w różnych obszarach biznesowych, automatyzacji procesów i wspieraniu zrównoważonego rozwoju przedsiębiorstw.",
+      outcome: "Uczestnicy nauczą się wykorzystywać AI do optymalizacji procesów, redukcji kosztów operacyjnych i wspierania zrównoważonego rozwoju w swojej organizacji.",
+      link: "#" // Placeholder - do uzupełnienia przez klienta
     }
   ];
 
   return (
     <section className="py-20 px-6 md:px-12 bg-gradient-section">
-      <div className="max-w-6xl mx-auto">
+      <div className="max-w-7xl mx-auto">
         <SectionHeader 
           subtitle="Nasze specjalizacje"
           title="Rozwój zawodowy dla Twojej firmy - nasze programy szkoleniowe."
         />
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {offers.map((program, index) => (
             <div 
               key={index} 
