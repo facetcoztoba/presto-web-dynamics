@@ -1,6 +1,5 @@
-import React from 'react';
-// Assuming SectionHeader is defined elsewhere and imported correctly
-// import SectionHeader from './SectionHeader';
+import React, { useState } from 'react';
+import TrainingModal from './TrainingModal';
 
 // Placeholder for SectionHeader component for self-contained code
 const SectionHeader: React.FC<{ subtitle: string; title: string }> = ({ subtitle, title }) => (
@@ -10,15 +9,50 @@ const SectionHeader: React.FC<{ subtitle: string; title: string }> = ({ subtitle
   </div>
 );
 
+interface TrainingData {
+  title: string;
+  subtitle: string;
+  description: string;
+  details: string;
+  outcome: string;
+  fullProgram: string;
+  targetGroup: string;
+  participationConditions: string;
+  organizationalConditions: string;
+  groupSize: string;
+  duration: string;
+  location: string;
+  price: string;
+  funding: string;
+}
+
 const OffersSection: React.FC = () => {
-  const offers = [
+  const [selectedTraining, setSelectedTraining] = useState<TrainingData | null>(null);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const offers: TrainingData[] = [
     {
       title: "ZARZĄDZANIA ZMIANĄ",
       subtitle: "SPECJALISTA DS.",
       description: "Kompleksowe szkolenie, które wyposaży Cię w kluczowe umiejętności zarządzania procesami zmian w organizacji, od planowania po skuteczną komunikację transformacji.",
       details: "Program skupia się na roli lidera w dynamicznym środowisku zmian, prezentując zaawansowane narzędzia i strategie minimalizowania oporu oraz budowania zaangażowania.",
       outcome: "Po ukończeniu szkolenia będziesz w stanie efektywnie opracowywać i wdrażać strategie zmian, a także prowadzić skuteczną komunikację z zespołem i otoczeniem biznesowym.",
-      link: "/wp-content/uploads/2025/06/Zarzadzanie_zmiana_Opis_szkolenia.pdf"
+      fullProgram: `Niniejsze szkolenie prowadzi do nabycia kwalifikacji zawodowych. Szkolenie obejmuje szeroki zakres zagadnień dotyczących zarządzania procesami zmian w organizacji, w tym: planowania, komunikowania i wdrażania transformacji. Przygotowuje także do stosowania narzędzi pozwalających na skuteczne komunikowanie się z otoczeniem podczas procesu zmian, minimalizowania oporu wobec zmian oraz korzystania z nowoczesnych narzędzi i technik wspierających efektywne zarządzanie zmianą.
+
+Moduł 1 – Podstawy zarządzania zmianą
+Moduł 2 – Człowiek w zmianie jak przekonać do zmian współpracowników i siebie. Rola lidera w zarządzaniu zmianą
+Moduł 3 - Narzędzia zarządzania zmianą i planowanie procesu transformacji
+Moduł 4 - Komunikowanie zmian
+Moduł 5 - Jak zmiana wpływa na ludzi i organizacje.
+Walidacja – egzamin zewnętrzny (test teoretyczny).`,
+      targetGroup: "Grupa docelowa to osoby chcące wzbogacić i rozwijać swoją wiedzę i umiejętności w zakresie zarządzania zmianą, w tym m.in. znajomość procesów zarządzania zmianą w organizacjach, wiedzę z zakresu komunikacji w procesach zmian, czy umiejętność opracowywania strategii zmian.\n\nSzkolenie dedykowane jest osobom dorosłym, które planują lub wdrażają zmiany w organizacjach (przedsiębiorstwach, fundacjach, stowarzyszeniach, instytucjach, urzędach) przechodzących albo planujących zmianę.",
+      participationConditions: "Nie jest wymagane od uczestników do udziału w szkoleniu posiadanie dodatkowej wiedzy, umiejętności czy doświadczenia.",
+      organizationalConditions: `Organizator szkolenia zapewnia materiały szkoleniowe dla każdego uczestnika (skrypt związany z tematem szkolenia, notes, długopis) w liczbie 1szt/os.\n\nSala szkoleniowa wyposażona jest w flipchart, rzutnik, stół, ekran oraz krzesła zapewniający komfortowy udział w szkoleniu.\n\nSzkolenie organizowane jest w formie stacjonarnej i obejmuje łącznie 20 h, w tym 70% to zajęcia praktyczne oraz 30% to zajęcia teoretyczne. W trakcie każdego dnia szkolenia przewidziano jedną dłuższą przerwę 25 minutową oraz 2 przerwy kawowe 10 minutowe. Czas przerw nie wlicza się w czas szkolenia. Podczas szkolenia przewidziane są m.in. prace indywidualne, prace w grupach, warsztaty, wykłady, dyskusja, studia przypadków.\n\nWalidacja - Egzamin zewnętrzny, odbędzie się na koniec szkolenia w formie stacjonarnej i potwierdza nabycie kwalifikacji zawodowej: Specjalista ds. zarządzania zmianą.`,
+      groupSize: "W celu osiągnięcia optymalnego efektu uczenia szkolenie realizowane jest w grupie składającej się z minimum 4, a maksymalnie 20 osób.",
+      duration: "Szkolenie trwa 20 godzin dydaktycznych i realizowane jest w ciągu dwóch dni.",
+      location: "Szkolenie realizowane jest w Bielsku-Białej przy ul. 3 Maja 13 albo w miejscu uzgodnionym wspólnie z klientem.",
+      price: "4 400,00 zł brutto - cena za całość szkolenia",
+      funding: "Istnieje możliwość uzyskania dofinansowania szkolenia ze środków UE. W celu uzyskania bliższych informacji prosimy o kontakt."
     },
     {
       title: "ZARZĄDZANIA PROJEKTAMI",
@@ -26,7 +60,28 @@ const OffersSection: React.FC = () => {
       description: "Zaawansowany program szkoleniowy oparty na uznanych metodykach i standardach branżowych, przygotowujący do efektywnego zarządzania projektami.",
       details: "Poznaj pełny cykl życia projektu – od inicjowania i planowania, przez realizację, aż po zamknięcie. Szkolenie obejmuje nowoczesne narzędzia i techniki zarządzania.",
       outcome: "Zdobędziesz praktyczne umiejętności w zarządzaniu ryzykiem, budowaniu i motywowaniu zespołów projektowych oraz optymalizacji procesów w różnorodnych środowiskach organizacyjnych.",
-      link: "/wp-content/uploads/2025/06/Zarzadzanie_projektami_Opis_szkolenia.pdf"
+      fullProgram: `Niniejsze szkolenie prowadzi do nabycia kwalifikacji zawodowych. Szkolenie obejmuje szeroki zakres zagadnień dotyczących zarządzania projektami z zastosowaniem uznanych metodyk, takich jak PMI, PRINCE2, Agile, Scrum - dzięki kompleksowemu podejściu, uczestnicy zdobędą wiedzę teoretyczną i umiejętności praktyczne, które będą mogli wykorzystać w różnych branżach i środowiskach zawodowych.
+
+Dzień 1: Podstawy i Planowanie Projektów
+Moduł 1: Wprowadzenie do zarządzania projektami
+Moduł 2: Metodologie zarządzania projektami
+Moduł 3: Inicjowanie projektu
+Moduł 4: Planowanie projektu
+
+Dzień 2: Realizacja, Monitorowanie, Zamykanie Projektów, Walidacja
+Moduł 5: Realizacja projektu
+Moduł 6: Zarządzanie ryzykiem w praktyce
+Moduł 7: Zamykanie projektu
+Moduł 8: Ćwiczenia praktyczne
+Moduł 9: Walidacja - Egzamin zewnętrzny w formie testu teoretycznego.`,
+      targetGroup: "Szkolenie skierowane jest do osób dorosłych, które chcą zdobyć kompleksową wiedzę w zakresie skutecznego organizowania i zarządzania projektami i poznać spektrum różnych metodyk zarządzania projektami w celu wyboru optymalnej do realizacji określonych działań w danej branży. Szkolenie dedykowane jest do przyszłych i obecnych członków zespołów projektowych, którzy aspirują do pracy w obszarze zarządzania projektami w różnych rolach.",
+      participationConditions: "Nie jest wymagane od uczestników do udziału w szkoleniu posiadanie dodatkowej wiedzy, umiejętności czy doświadczenia.",
+      organizationalConditions: `Organizator szkolenia zapewnia materiały szkoleniowe dla każdego uczestnika (skrypt związany z tematem szkolenia, notes, długopis) w liczbie 1szt/os.\n\nSala szkoleniowa wyposażona jest w flipchart, rzutnik, stół, ekran oraz krzesła zapewniający komfortowy udział w szkoleniu.\n\nSzkolenie organizowane jest w formie stacjonarnej i obejmuje łącznie 20 h, w tym 60% to zajęcia praktyczne oraz 40% to zajęcia teoretyczne. W trakcie każdego dnia szkolenia przewidziano jedną dłuższą przerwę 25 minutową oraz 2 przerwy kawowe 10 minutowe. Podczas szkolenia przewidziane są m.in. prace indywidualne, prace w grupach, warsztaty, wykłady, dyskusja, studia przypadków.\n\nWalidacja - Egzamin zewnętrzny, odbędzie się na koniec szkolenia w formie stacjonarnej i potwierdza nabycie kwalifikacji zawodowej: Specjalista ds. zarządzania projektami.`,
+      groupSize: "W celu osiągnięcia optymalnego efektu uczenia szkolenie realizowane jest w grupie składającej się z minimum 4, a maksymalnie 20 osób.",
+      duration: "Szkolenie trwa 20 godzin dydaktycznych i realizowane jest w ciągu dwóch dni.",
+      location: "Szkolenie realizowane jest w Bielsku-Białej przy ul. 3 Maja 13 albo w miejscu uzgodnionym wspólnie z klientem.",
+      price: "4 400,00 zł brutto - cena za całość szkolenia",
+      funding: "Istnieje możliwość uzyskania dofinansowania szkolenia ze środków UE. W celu uzyskania bliższych informacji prosimy o kontakt."
     },
     {
       title: "SZTUCZNEJ INTELIGENCJI",
@@ -34,7 +89,26 @@ const OffersSection: React.FC = () => {
       description: "Innowacyjny program wprowadzający w świat sztucznej inteligencji, z naciskiem na jej zastosowanie w kontekście zrównoważonego rozwoju i efektywności biznesowej.",
       details: "Szkolenie obejmuje praktyczne zastosowania technologii AI w optymalizacji procesów przemysłowych, zarządzaniu energią oraz ochronie środowiska.",
       outcome: "Nauczysz się efektywnie komunikować z modelami językowymi, wykorzystywać narzędzia oparte na AI oraz zrozumiesz kluczowe aspekty etyczne i prawne nowoczesnych technologii.",
-      link: "/wp-content/uploads/2025/06/Specjalista_ds_sztucznej_inteligencji_Opis_szkolenia.pdf"
+      fullProgram: `Szkolenie wprowadza uczestników do świata AI, skupiając się na podstawowych narzędziach i technikach. Celem jest rozwijanie przekrojowych umiejętności cyfrowych, które mogą być zastosowane w różnych branżach i dziedzinach takich jak optymalizacja procesów przemysłowych, technologie informacyjne, zarządzanie energią, transport, rolnictwo oraz ochrona środowiska. Dzięki temu szkolenie przygotowuje uczestników do skutecznego wykorzystywania AI w sposób, który wspiera zrównoważony rozwój, zieloną transformację i oszczędzanie energii. Szkolenie zawiera informacje i praktyczne ćwiczenia dotyczące zastosowania AI z naciskiem na cele pro-środowiskowe.
+
+• Wprowadzenie do AI
+• Zastosowanie sztucznej inteligencji w różnych dziedzinach, przedstawienie celów strategii GreenComp Europejskie Ramy Kompetencji w zakresie zrównoważonego rozwoju.
+• Typy AI.
+• Problemy etyczne, prawne i środowiskowe wykorzystania AI.
+• Zasady komunikacji z modelami AI w kontekście zrównoważonego rozwoju.
+• Techniki promptingu.
+• Praca z modelami językowymi w kontekście zrównoważonego.
+• Rozwój i udoskonalanie technik pracy z różnymi modelami
+• Narzędzia oparte o AI.
+• Walidacja - egzamin zewnętrzny w formie testu on line.`,
+      targetGroup: "Grupa docelowa to osoby dorosłe chcące podnieść kompetencje cyfrowe w zakresie wiedzy i umiejętności dotyczących narzędzi opartych na sztucznej inteligencji oraz zrównoważonego rozwoju, które planują lub realizują już pracę w organizacjach z potencjałem do tworzenia zielonych miejsc pracy. Szkolenie dedykowane jest osobom odpowiedzialnym lub planującym wzięcie odpowiedzialności za rozwój zrównoważonych rozwiązań w swoich organizacjach.",
+      participationConditions: "Szkolenie skierowane jest do osób o różnym wykształceniu i doświadczeniu. Uczestnicy szkolenia powinni posiadać podstawowe umiejętności obsługi komputera/tabletu. Nie jest wymagane doświadczanie w korzystaniu z jakichkolwiek modeli AI.",
+      organizationalConditions: `Realizator szkolenia zapewnia odpowiednią infrastrukturę techniczną związaną z dostarczeniem na czas usługi uczestnikom szkolenia komputerów/tabletów, na których udostępnione zostaną materiały szkoleniowe (skrypt w formie multimedialnej).\n\nOrganizator szkolenia dostarcza komputery/tablety w liczbie 1szt/os. oraz licencje niezbędne do przeprowadzenia szkolenia.\n\nSzkolenie organizowane jest w formie stacjonarnej i obejmuje łącznie 18 h, w tym 80% to zajęcia praktyczne oraz 20% to zajęcia teoretyczne. W trakcie każdego dnia szkolenia przewidziano jedną dłuższą przerwę 25 minutową oraz 2 przerwy kawowe 10 minutowe. Czas przerw nie wlicza się w czas szkolenia. Podczas szkolenia przewidziane są m.in. prace indywidualne, prace w grupach, warsztaty, wykłady, studia przypadków.\n\nWalidacja odbędzie się na koniec szkolenia i wykonywana jest za pośrednictwem testu teoretycznego dostępnego on-line na platformie Instytucji Certyfikującej. Egzamin zewnętrzny, odbędzie się w formie zdalnej (on-line) w czasie rzeczywistym i potwierdza nabycie kwalifikacji zawodowej: Specjalista ds. sztucznej inteligencji w zakresie zrównoważonego rozwoju.`,
+      groupSize: "W celu osiągnięcia optymalnego efektu uczenia szkolenie realizowane jest w grupie składającej się z minimum 4, a maksymalnie 20 osób.",
+      duration: "Szkolenie trwa 18 godzin dydaktycznych i realizowane jest w ciągu dwóch dni.",
+      location: "Szkolenie realizowane jest w Bielsku-Białej przy ul. 3 Maja 13 albo w miejscu uzgodnionym wspólnie z klientem.",
+      price: "5 220,00 zł brutto - cena za całość szkolenia",
+      funding: "Istnieje możliwość uzyskania dofinansowania szkolenia ze środków UE. W celu uzyskania bliższych informacji prosimy o kontakt."
     },
     {
       title: "OPTYMALIZACJI PROCESÓW Z CHATGPT",
@@ -42,9 +116,43 @@ const OffersSection: React.FC = () => {
       description: "Nowoczesne szkolenie łączące zieloną transformację biznesu z praktycznym wykorzystaniem sztucznej inteligencji, szczególnie ChatGPT, w codziennej pracy.",
       details: "Program koncentruje się na praktycznym zastosowaniu ChatGPT w różnych obszarach biznesowych, automatyzacji procesów i wspieraniu zrównoważonego rozwoju przedsiębiorstw.",
       outcome: "Zdobędziesz umiejętności wykorzystywania AI do znaczącej optymalizacji procesów, redukcji kosztów operacyjnych oraz wspierania zrównoważonego rozwoju w Twojej organizacji.",
-      link: "#" // Placeholder - do uzupełnienia przez klienta
+      fullProgram: `Program szkolenia został zaprojektowany tak, aby krok po kroku wprowadzać uczestników w działanie narzędzia, pokazując, jak efektywnie wykorzystywać ChatGPT do automatyzacji zadań, optymalizacji procesów oraz poprawy produktywności w różnych obszarach biznesowych. Szkolenie wspiera rozwój zielonych kompetencji, pokazując, jak technologie oparte na sztucznej inteligencji mogą przyczynić się do zrównoważonego rozwoju. Uczestnicy dowiedzą się, jak zastosowanie ChatGPT może minimalizować zużycie zasobów, ograniczać ślad węglowy oraz wspierać transformację ekologiczną organizacji.
+
+• Wprowadzenie do ChatGPT i zielonych kompetencji
+• Wykorzystanie ChatGPT w obsłudze klienta i komunikacji z klientem
+• Zarządzanie projektami przy wykorzystaniu ChatGPT
+• Organizacja spotkań i zarządzanie czasem pracy przy wykorzystaniu modeli ChatGPT
+• Wykorzystanie modeli ChatGPT do prowadzenia działań marketingowych
+• Sprzedaż - wykorzystanie narzędzi ChatGPT do optymalizacji procesów sprzedażowych
+• Edukacja i szkolenia pracowników - przygotowywanie treści edukacyjnych przy wykorzystaniu ChatGPT
+• Kreatywne myślenie i innowacyjne pomysły - wykorzystanie modeli ChatGPT
+• Analiza danych i raportowanie przy wykorzystaniu ChatGPT
+• Walidacja efektów uczenia się i podsumowanie szkolenia`,
+      targetGroup: `Szkolenie skierowane jest do osób dorosłych, które chcą rozwijać swoje kompetencje w zakresie nowoczesnych technologii opartych na AI, takich jak ChatGPT, z naciskiem na ich zastosowanie w zrównoważonym rozwoju oraz zielonej gospodarce. Grupa docelowa obejmuje osoby pracujące lub chcące znaleźć pracę, w szczególności:
+
+• pracowników działów sprzedaży, marketingu, obsługi klienta, HR, którzy pragną m.in. zintegrować ChatGPT z codziennymi zadaniami, poprawiając efektywność, kreatywność, co jest niezbędne w zasobooszczędnej zielonej gospodarce
+• wszystkie osoby wchodzące na rynek pracy, uczące się lub poszukujące przekwalifikowania zawodowego, które chcą dostosować swoje umiejętności do wyzwań zielonej transformacji
+
+Szkolenie ma charakter podstawowy i nie wymaga znajomości ChatGPT ani innych modeli opartych na AI.`,
+      participationConditions: "Szkolenie ma charakter podstawowy i nie wymaga znajomości ChatGPT ani innych modeli opartych na AI. Jest skierowane do osób, które rozpoczynają swoją przygodę z AI i chcą poznać praktyczne możliwości jego zastosowania.",
+      organizationalConditions: `Realizator szkolenia zapewnia odpowiednią infrastrukturę techniczną związaną z dostarczeniem na czas usługi uczestnikom szkolenia komputerów/tabletów, na których udostępnione zostaną materiały szkoleniowe (skrypt w formie multimedialnej).\n\nOrganizator szkolenia dostarcza komputery/tablety w liczbie 1szt/os. oraz licencje niezbędne do przeprowadzenia szkolenia.\n\nSzkolenie organizowane jest w formie stacjonarnej i obejmuje łącznie 20 h, w tym 64% to zajęcia praktyczne oraz 36% to zajęcia teoretyczne. W trakcie każdego dnia szkolenia przewidziano jedną dłuższą przerwę 20 minutową oraz 2 przerwy kawowe 10 minutowe. Czas przerw nie wlicza się w czas szkolenia. Podczas szkolenia przewidziane są m.in. prace indywidualne, prace w grupach, warsztaty, wykłady, studia przypadków.\n\nWalidacja odbędzie się na koniec szkolenia i wykonywana jest za pośrednictwem testu teoretycznego dostępnego on-line na platformie Instytucji Certyfikującej. Egzamin zewnętrzny, odbędzie się w formie zdalnej (on-line) w czasie rzeczywistym i potwierdza nabycie kwalifikacji zawodowej: Specjalista ds. optymalizacji procesów z ChatGPT – zielona transformacja biznesu.`,
+      groupSize: "W celu osiągnięcia optymalnego efektu uczenia szkolenie realizowane jest w grupie składającej się z minimum 4, a maksymalnie 20 osób.",
+      duration: "Szkolenie trwa 20 godzin dydaktycznych i realizowane jest w ciągu dwóch dni.",
+      location: "Szkolenie realizowane jest w Bielsku-Białej przy ul. 3 Maja 13 albo w miejscu uzgodnionym wspólnie z klientem.",
+      price: "4 800,00 zł brutto - cena za całość szkolenia",
+      funding: "Istnieje możliwość uzyskania dofinansowania szkolenia ze środków UE. W celu uzyskania bliższych informacji prosimy o kontakt."
     }
   ];
+
+  const openModal = (training: TrainingData) => {
+    setSelectedTraining(training);
+    setIsModalOpen(true);
+  };
+
+  const closeModal = () => {
+    setIsModalOpen(false);
+    setSelectedTraining(null);
+  };
 
   return (
     <section className="py-20 px-6 md:px-12 bg-gradient-section overflow-hidden">
@@ -94,17 +202,15 @@ const OffersSection: React.FC = () => {
 
               {/* CTA Button */}
               <div className="relative z-10 mt-auto">
-                <a
-                  href={program.link}
-                  target="_blank"
-                  rel="noopener noreferrer"
+                <button
+                  onClick={() => openModal(program)}
                   className="inline-flex items-center justify-between w-full px-6 py-3 bg-primary-light/10 hover:bg-primary-light/20 rounded-2xl text-primary-light font-semibold hover:text-primary-light-hover transition-all duration-300 font-inter group-hover:translate-x-1 border border-primary-light/20 hover:border-primary-light/40"
                 >
-                  <span>Program szkolenia</span>
+                  <span>Szczegóły szkolenia</span>
                   <svg className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
                   </svg>
-                </a>
+                </button>
               </div>
             </div>
           ))}
@@ -113,6 +219,12 @@ const OffersSection: React.FC = () => {
         <div className="absolute -top-20 -right-20 w-40 h-40 bg-primary-light/5 rounded-full blur-3xl opacity-50"></div>
         <div className="absolute -bottom-20 -left-20 w-40 h-40 bg-primary/5 rounded-full blur-3xl opacity-50"></div>
       </div>
+
+      <TrainingModal 
+        isOpen={isModalOpen}
+        onClose={closeModal}
+        training={selectedTraining}
+      />
     </section>
   );
 };

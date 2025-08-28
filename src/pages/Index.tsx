@@ -27,6 +27,11 @@ const App = () => { // Zmieniono nazwę komponentu na App, aby pasowała do domy
     }
   };
 
+  // Funkcja do przełączania menu mobilnego
+  const toggleMobileMenu = () => {
+    setIsMobileMenuOpen(!isMobileMenuOpen);
+  };
+
   return (
     <div className="font-inter antialiased text-gray-900">
       {/* Suspense fallback wyświetlany podczas ładowania komponentów */}
@@ -37,7 +42,7 @@ const App = () => { // Zmieniono nazwę komponentu na App, aby pasowała do domy
       }>
         <Header
           isMobileMenuOpen={isMobileMenuOpen}
-          setIsMobileMenuOpen={setIsMobileMenuOpen} // Bezpośrednie przekazanie settera
+          toggleMobileMenu={toggleMobileMenu}
           scrollToSection={scrollToSection}
         />
 
